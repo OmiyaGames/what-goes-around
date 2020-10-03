@@ -128,5 +128,5 @@ MonoBehaviour:
   body: {fileID: 8930660086744740987}
   gravityStrength: 100
   power: 1
-  lifeDurationSeconds: 3
+  lifeDurationSeconds: 3.5
   movementSpeed: {x: 20, y: 0, z: 0}
