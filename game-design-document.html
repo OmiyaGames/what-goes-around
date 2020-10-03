@@ -46,7 +46,7 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
-<title>Template Game Design Document — A game design document template for small teams.</title>
+<title>Ludum Dare 47 — A game design document template for small teams.</title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~--><!--~~ Raw markup ~~-->
 
 <script>
@@ -592,7 +592,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 	}
 }
 </style><div class="tc-splash-text">
-Please wait while Template Game Design Document is loading
+Please wait while Ludum Dare 47 is loading
 </div><div class="tc-splash-spinner">
   <div class="tc-splash-bounce-1"></div>
   <div class="tc-splash-bounce-2"></div>
@@ -1178,6 +1178,8 @@ Error message and password prompt
 
 <li>Help</li>
 
+<li>Levels</li>
+
 <li>Market</li>
 
 <li>Milestone - Active</li>
@@ -1247,6 +1249,8 @@ Error message and password prompt
 <li>Unassigned Tasks</li>
 
 <li>Untitled</li>
+
+<li>Weapons</li>
 
 </ul>
 </p>
@@ -10371,13 +10375,11 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 
 &lt;/$reveal&gt;</pre>
 </div>
-<div created="20190506220604283" modified="20190509211009439" title="$:/DefaultTiddlers">
+<div created="20190506220604283" modified="20201003030049901" title="$:/DefaultTiddlers">
 <pre>About
 [[Table of Contents]]
 Design
-Market
-Roadmap
-[[Team Members]]</pre>
+Roadmap</pre>
 </div>
 <div created="20190510064544000" modified="20190510064602034" title="$:/favicon.ico" type="image/x-icon">
 <pre>AAABAAEAQ0UCAAEAAQCoBgAAFgAAACgAAABDAAAAigAAAAEAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8AAAAAANVX////////4AAAAIAP////////4AAAAAAH////////4AAAAIAH////////4AAAAAAH////////4AAAAIAH////////4AAAAIAH////////4AAAAIAH////////4AAAAAAH////////4AAAAIAH////////4AAAAAAH////////4AAAAIAH////////4AAAAAAH////////4AAAAIAH////////4AAAAAAH////////4AAAAIAH////////4AAAAAAH////////4AAAAIAH////////4AAAAAAH////////4AAAAIAH////////4AAAAAAH////////4AAAAIAH////////4AAAAAAH////////4AAAAIAH4AK/////4AAAAAAHgAAH////4AAAAIAHgAAA////4AAAAAAHgAAAH///4AAAAIAHgAAAA///4AAAAAAHgAAAAf//4AAAAIAHgAAAAP//4AAAAAAHgAAAAB//4AAAAIAHgAAAAA//4AAAAAAHgAAAAAP/4AAAAIAHgAAAAAP/4AAAAAAHgAAAAAB/4AAAAIAHgAAAAAA/4AAAAAAHgAAAAAAf4AAAAIAHgAAAAAAP4AAAAIAHgAAAAAAH4AAAAIAHgAAAAAAD4AAAAAAHgAAAAAAB4AAAAIAHgAAAAAAA4AAAAAAHgAAAAAAAYAAAAIAHgAAAAAAAYAAAAAAHgAAAAAAAIAAAAIAHgAAAAAAAAAAAAAAHgAAAAAAAAAAAAIAHgAAAAAAAAAAAAAAHgAAAAAAAAAAAAIAHgAAAAAAK4AAAAAAHgAAAAABf4AAAAIAHgAAAAAv/4AAAAAAHgAAAAH//4AAAAIAHgAAAC///4AAAAAAHgAAAH///4AAAAIAHgAAA////4AAAAAAHgAAB////4AAAAIAHgAAP////4AAAAAAHgAB/////4AAAAIAHgAD/////4AAAAAAHgAP/////4AAAAIAHgA//////4AAAAAAHgB//////4AAAAIAHgP//////4AAAAAAHgf//////4AAAAIAHh///////4AAAAAAH3///////4AAAAIAH////////4AAAAMAH////////4AAAANVX////////4AAAAIAP////////4AAAAAAH////////4AAAAIAH////////4AAAAAAH////////4AAAAIAH////////4AAAAIAH////////4AAAAIAH////////4AAAAAAH////////4AAAAIAH////////4AAAAAAH////////4AAAAIAH////////4AAAAAAH////////4AAAAIAH////////4AAAAAAH////////4AAAAIAH////////4AAAAAAH////////4AAAAIAH////////4AAAAAAH////////4AAAAIAH////////4AAAAAAH////////4AAAAIAH////////4AAAAAAH////////4AAAAIAH4AK/////4AAAAAAHgAAH////4AAAAIAHgAAA////4AAAAAAHgAAAH///4AAAAIAHgAAAA///4AAAAAAHgAAAAf//4AAAAIAHgAAAAP//4AAAAAAHgAAAAB//4AAAAIAHgAAAAA//4AAAAAAHgAAAAAP/4AAAAIAHgAAAAAP/4AAAAAAHgAAAAAB/4AAAAIAHgAAAAAA/4AAAAAAHgAAAAAAf4AAAAIAHgAAAAAAP4AAAAIAHgAAAAAAH4AAAAIAHgAAAAAAD4AAAAAAHgAAAAAAB4AAAAIAHgAAAAAAA4AAAAAAHgAAAAAAAYAAAAIAHgAAAAAAAYAAAAAAHgAAAAAAAIAAAAIAHgAAAAAAAAAAAAAAHgAAAAAAAAAAAAIAHgAAAAAAAAAAAAAAHgAAAAAAAAAAAAIAHgAAAAAAK4AAAAAAHgAAAAABf4AAAAIAHgAAAAAv/4AAAAAAHgAAAAH//4AAAAIAHgAAAC///4AAAAAAHgAAAH///4AAAAIAHgAAA////4AAAAAAHgAAB////4AAAAIAHgAAP////4AAAAAAHgAB/////4AAAAIAHgAD/////4AAAAAAHgAP/////4AAAAIAHgA//////4AAAAAAHgB//////4AAAAIAHgP//////4AAAAAAHgf//////4AAAAIAHh///////4AAAAAAH3///////4AAAAIAH////////4AAAAMAH////////4AAAAA==</pre>
@@ -11234,8 +11236,8 @@ Roadmap
 <div created="20190506215155544" modified="20190510055301909" title="$:/SiteSubtitle">
 <pre>A game design document template for small teams.</pre>
 </div>
-<div created="20190506215129943" modified="20190508072331716" title="$:/SiteTitle">
-<pre>Template Game Design Document</pre>
+<div created="20190506215129943" modified="20201003024242491" title="$:/SiteTitle">
+<pre>Ludum Dare 47</pre>
 </div>
 <div created="20180927082601825" modified="20190510062025932" tags="$:/tags/RawMarkupWikified/TopBody" title="$:/SplashScreen" type="text/vnd.tiddlywiki">
 <pre>\import [[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]
@@ -11533,7 +11535,7 @@ Please wait while {{$:/SiteTitle}} is loading
 <div created="20190506225026483" modified="20190506225026483" title="$:/state/toc/TableOfContents-Roadmap-842329646">
 <pre>open</pre>
 </div>
-<div created="20190712142226904" list="About [[Customize Wiki]] [[Table of Contents]] Design Market Roadmap [[Team Members]]" modified="20190712142240679" title="$:/StoryList">
+<div created="20201003025925058" list="$:/ControlPanel About [[Table of Contents]] Design Levels Weapons Roadmap [[Team Members]]" modified="20201003030039888" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20190508051301171" modified="20190511222056602" title="$:/temp/advancedsearch">
@@ -11552,7 +11554,7 @@ Please wait while {{$:/SiteTitle}} is loading
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;file:///D:/Projects/hg/template-unity-project/Assets/Omiya%20Games/template-game-design-document.html&quot;
+            &quot;text&quot;: &quot;file:///D:/Projects/git/ludum-dare-47/game-design-document.html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
@@ -11572,7 +11574,7 @@ Please wait while {{$:/SiteTitle}} is loading
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/D:/Projects/hg/template-unity-project/Assets/Omiya%20Games/template-game-design-document.html&quot;
+            &quot;text&quot;: &quot;/D:/Projects/git/ludum-dare-47/game-design-document.html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -12659,16 +12661,10 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
     }
 }</pre>
 </div>
-<div created="20190506220937314" modified="20190511221246936" order="0" tags="[[Table of Contents]]" title="About" type="text/vnd.tiddlywiki">
+<div created="20190506220937314" modified="20201003024234480" order="0" tags="[[Table of Contents]]" title="About" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;createSubPageHeader&gt;&gt;
 
-This is a template game design document for a prototype game.  Feel free to replace this text with a description about your project here.  Don't forget to edit the title and subtitle of this wiki by clicking on the [[gear icon|$:/ControlPanel]] on the upper-right hand corner.  That way, text like the following will update automatically: &lt;&lt;projectTitle&gt;&gt;
-
-Clicking on the three-lined &quot;hamburger&quot; button on the upper-left hand corner expands the sidebar, revealing the [[Table of Contents]].  The table of contents also appears below this page by default.  To revert this wiki back to the default pages of this wiki, simply click on the home button on the upper-right hand corner.
-
-To add a new wiki pages, click on the [[plus icon|New Page]] on the lower-right hand corner.  Remember to add the tag, [[Table of Contents]], on the new page so that it will appear under the sidebar. Alternatively, you can click on the &quot;Create a New Sub-Page&quot; button above this text.  This convenience feature will create a sub-page to this page, and update the sidebar accordingly.
-
-For more details on how to configure this wiki, check [[TiddlyWiki|https://tiddlywiki.com]]'s website and the [[Help]] page.
+This is Taro's note-taking page on the game desing of his Ludum Dare 47 game.  He has no idea what he's doing, by the way.
 
 &lt;&lt;commentsFooter&gt;&gt;</pre>
 </div>
@@ -13005,21 +13001,16 @@ Create a $template$
 
 &lt;&lt;commentsFooter&gt;&gt;</pre>
 </div>
-<div created="20190506223036682" modified="20190512002017874" order="1" tags="[[Table of Contents]]" title="Design" type="text/vnd.tiddlywiki">
+<div created="20190506223036682" modified="20201003025802874" order="1" tags="[[Table of Contents]]" title="Design" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;createSubPageHeader&gt;&gt;
 
-This document covers the general design philosophy of &lt;&lt;projectTitle&gt;&gt;.  More specific details relevant to the design of the project will be linked at the bottom.
+&lt;&lt;projectTitle&gt;&gt; is basically Geometry Wars 3, if it was made by Enhanced.  This...would basically make it Beat Hazard in 3D, but whatever.
 
 ! Core Experience
 
-!! Short Version, Sorted by Priority
-
-# Make this document general-purpose.
-# But also have a few automated processes.
-
-!! More Details
-
-//TODO//
+# One word: flow
+# Musical experience
+# Requires deep concentration
 
 ! Objective
 
@@ -13027,33 +13018,18 @@ This document covers the general design philosophy of &lt;&lt;projectTitle&gt;&g
 
 ! Inspirations
 
-//TODO//
+* Geometry Wars 3
+* Tetris Effect
+* Lumines
 
-! Terminologies
+! Controls
 
-//TODO//
+* On controller, twin-stick fire
+* On keyboard &amp; mouse, mouse fires
+
+Should we make the ship always fire?  Or would it make sense to add faster movement when ship isn't firing?
 
 &lt;&lt;seeAlso&gt;&gt;
-
-!! [[Other Play Modes|Play Modes]]
-
-//This section may be better off on it's own page.//
-
-!! [[Controls]]
-
-//This section may be better off on it's own page.//
-
-!! [[Mechanics]]
-
-//This section may be better off on it's own page.//
-
-!! [[Systems]]
-
-//This section may be better off on it's own page.//
-
-!! [[Economy]]
-
-//This section may be better off on it's own page.//
 
 &lt;&lt;commentsFooter&gt;&gt;</pre>
 </div>
@@ -13223,6 +13199,36 @@ Oddly enough, the [[Tag Manager|$:/TagManager]] does ''not'' let you rename tags
 
 By using TiddlyWiki's transclusion: enter the name of the page between `{{}}` (e.g. `{{Name Of Page}}`) to embed!
 
+&lt;&lt;commentsFooter&gt;&gt;</pre>
+</div>
+<div created="20201003025711223" creator="Omiya Games" modified="20201003025948136" order="1" tags="Design" title="Levels">
+<pre>&lt;&lt;createSubPageHeader&gt;&gt;
+
+One will be selected at random.  After a certain score and time threshold, the game will automatically transition to the next one.
+
+!! Easy ones:
+
+* Outside a sphere
+* Inside of a sphere
+
+!! Needs a little more effort
+
+* Outside vertical cylinder
+* Inside vertical cylinder
+* Outside horizontal cylinder
+* Inside horizontal cylinder
+* Inside cube
+
+!! Would be nice
+
+* Outside cube
+* Inside pyramid
+* Outside pyramid
+* Inside cone
+* Outside cone
+
+
+&lt;&lt;seeAlso&gt;&gt;
 &lt;&lt;commentsFooter&gt;&gt;</pre>
 </div>
 <div created="20190506222206036" modified="20190512002153324" order="2" tags="[[Table of Contents]]" title="Market" type="text/vnd.tiddlywiki">
@@ -13649,6 +13655,26 @@ Create a New Team Member
 &lt;!--StartFragment--&gt;&lt;pre class=&quot;default prettyprint prettyprinted&quot; style=&quot;margin: 0px 0px 1em; padding: 12px 8px; border: 0px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-weight: 400; font-stretch: inherit; line-height: inherit; font-family: Consolas, Menlo, Monaco, &amp;quot;Lucida Console&amp;quot;, &amp;quot;Liberation Mono&amp;quot;, &amp;quot;DejaVu Sans Mono&amp;quot;, &amp;quot;Bitstream Vera Sans Mono&amp;quot;, &amp;quot;Courier New&amp;quot;, monospace, sans-serif; font-size: 13px; vertical-align: baseline; box-sizing: inherit; width: auto; max-height: 600px; overflow: auto; background-color: rgb(239, 240, 241); border-radius: 3px; display: block; color: rgb(57, 51, 24); overflow-wrap: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;code style=&quot;margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; font-family: Consolas, Menlo, Monaco, &amp;quot;Lucida Console&amp;quot;, &amp;quot;Liberation Mono&amp;quot;, &amp;quot;DejaVu Sans Mono&amp;quot;, &amp;quot;Bitstream Vera Sans Mono&amp;quot;, &amp;quot;Courier New&amp;quot;, monospace, sans-serif; font-size: 13px; vertical-align: baseline; box-sizing: inherit; background-color: rgb(239, 240, 241); white-space: inherit;&quot;&gt;&lt;span class=&quot;pln&quot; style=&quot;margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; font-family: inherit; font-size: 13px; vertical-align: baseline; box-sizing: inherit; color: rgb(48, 51, 54);&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;pun&quot; style=&quot;margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; font-family: inherit; font-size: 13px; vertical-align: baseline; box-sizing: inherit; color: rgb(48, 51, 54);&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;pln&quot; style=&quot;margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; font-family: inherit; font-size: 13px; vertical-align: baseline; box-sizing: inherit; color: rgb(48, 51, 54);&quot;&gt;relative&lt;/span&gt;&lt;span class=&quot;pun&quot; style=&quot;margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; font-family: inherit; font-size: 13px; vertical-align: baseline; box-sizing: inherit; color: rgb(48, 51, 54);&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;!--EndFragment--&gt;
 &lt;/body&gt;
 &lt;/html&gt;</pre>
+</div>
+<div created="20201003025626445" creator="Omiya Games" modified="20201003025957861" order="0" tags="Design" title="Weapons">
+<pre>&lt;&lt;createSubPageHeader&gt;&gt;
+
+Important to note that each gun does have an effective range and fire-rate that goes with the beat of the music.
+
+!! Easy ones:
+
+* double fire
+* piercing
+* shotgun
+* super rapid fire
+* wave
+
+!! Would be nice
+
+* Potentially allow weapon swapping?
+
+&lt;&lt;seeAlso&gt;&gt;
+&lt;&lt;commentsFooter&gt;&gt;</pre>
 </div>
 
 </div>
