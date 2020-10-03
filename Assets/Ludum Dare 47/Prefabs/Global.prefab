@@ -86,7 +86,6 @@ GameObject:
   - component: {fileID: 835614170}
   - component: {fileID: 835614173}
   - component: {fileID: 835614172}
-  - component: {fileID: 835614171}
   - component: {fileID: 6677586897537471674}
   m_Layer: 5
   m_Name: Canvas
@@ -158,23 +157,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &835614171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 835614169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!114 &6677586897537471674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,6 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiCanvas: {fileID: 835614173}
   reticle: {fileID: 733826153}
+  smoothFactor: 20
 --- !u!1 &2935704616838926451
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,6 +181,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1058143301422265886}
+  - component: {fileID: 886253394012772473}
   m_Layer: 0
   m_Name: Global
   m_TagString: Untagged
@@ -222,6 +206,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &886253394012772473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2935704616838926451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1ecc82984d0b8848916eabd4caa6e59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ship: {fileID: 4511071967573243336}
+  camera: {fileID: 4511071968233097514}
+  reticle: {fileID: 6677586897537471674}
 --- !u!1001 &4511071967488525525
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -293,6 +292,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4511071967488525525}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4511071968233097514 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 748801535, guid: 0cb066fb0f0cf4a43a8d239b0f1b221e,
+    type: 3}
+  m_PrefabInstance: {fileID: 4511071967488525525}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19c716a710b64f4f9a63dc810a1ccb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &4526719061387716733 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 20458670678699176, guid: 0cb066fb0f0cf4a43a8d239b0f1b221e,

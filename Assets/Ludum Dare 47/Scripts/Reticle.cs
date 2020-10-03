@@ -17,6 +17,16 @@ namespace LudumDare47
 
         Vector3 targetPosition;
 
+        public Vector3 AimPosition
+        {
+            get => reticle.transform.position;
+        }
+
+        public float CanvasDistance
+        {
+            set => uiCanvas.planeDistance = value;
+        }
+
         // Update is called once per frame
         void Update()
         {

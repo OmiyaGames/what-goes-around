@@ -6,11 +6,6 @@ namespace LudumDare47
 {
     public class FollowCamera : MonoBehaviour
     {
-        [SerializeField]
-        PlayerShip follow;
-        [SerializeField]
-        Canvas reticleCanvas;
-
         [Header("Positioning")]
         [SerializeField]
         Vector3 positionOffset = new Vector3(0, 0, -5f);
@@ -24,18 +19,18 @@ namespace LudumDare47
 
         private void Start()
         {
-            reticleCanvas.planeDistance = positionOffset.magnitude;
+            Game.Reticle.CanvasDistance = positionOffset.magnitude;
         }
 
         // Update is called once per frame
         void FixedUpdate()
         {
             // Calculate the target position
-            targetPosition = follow.transform.position;
-            targetPosition += (follow.Orientation * positionOffset);
+            targetPosition = Game.Player.transform.position;
+            targetPosition += (Game.Player.Orientation * positionOffset);
 
             // Calculate the target rotation
-            targetRotation = follow.Orientation;
+            targetRotation = Game.Player.Orientation;
 
             // Update the camera
             transform.SetPositionAndRotation(

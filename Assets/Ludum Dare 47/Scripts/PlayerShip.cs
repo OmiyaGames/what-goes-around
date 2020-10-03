@@ -28,17 +28,18 @@ namespace LudumDare47
             private set;
         } = Quaternion.identity;
 
-        Vector2 rawInput, finalInput;
-
-        // Start is called before the first frame update
-        void Start()
+        public LevelInfo Level
         {
-
+            private get => info;
+            set => info = value;
         }
+
+        Vector2 rawInput, finalInput;
 
         // Update is called once per frame
         void Update()
         {
+            // Grab the raw, input direction
             rawInput.x = Input.GetAxis("Horizontal");
             rawInput.y = Input.GetAxis("Vertical");
 
@@ -49,7 +50,7 @@ namespace LudumDare47
         private void FixedUpdate()
         {
             // First, update the rotation of this ship
-            Orientation = info.GetOrientation(transform);
+            Orientation = Level.GetOrientation(transform, Game.Camera.transform.up);
             body.MoveRotation(Orientation);
 
             // Apply gravity
@@ -61,31 +62,21 @@ namespace LudumDare47
 
         private void OnDrawGizmosSelected()
         {
-            Gizmos.color = Color.blue;
-            Vector3 direction = info.GetGravityDirection(transform);
-            Gizmos.DrawLine(transform.position, (transform.position + direction));
+            if (Level != null)
+            {
+                Gizmos.color = Color.blue;
+                Vector3 direction = Level.GetGravityDirection(transform);
+                Gizmos.DrawLine(transform.position, (transform.position + direction));
 
-            Gizmos.color = Color.red;
-            direction = Orientation * Vector3.right;
-            Gizmos.DrawLine(transform.position, (transform.position + direction));
+                Gizmos.color = Color.red;
+                direction = Orientation * Vector3.right;
+                Gizmos.DrawLine(transform.position, (transform.position + direction));
 
-            Gizmos.color = Color.green;
-            direction = Orientation * Vector3.up;
-            Gizmos.DrawLine(transform.position, (transform.position + direction));
+                Gizmos.color = Color.green;
+                direction = Orientation * Vector3.up;
+                Gizmos.DrawLine(transform.position, (transform.position + direction));
+            }
         }
-
-        //private Vector3 ProjectDirectionOnPlane(Vector3 direction)
-        //{
-        //    Vector3 returnVector = Vector3.zero;
-        //    float magnitude = direction.magnitude;
-        //    if(Mathf.Approximately(magnitude, 0f) == false)
-        //    {
-        //        Vector3 normal = info.GetGravityDirection(transform) * -1f;
-        //        returnVector = (direction - normal * Vector3.Dot(direction, normal)).normalized;
-        //        returnVector *= magnitude;
-        //    }
-        //    return returnVector;
-        //}
 
         private void ApplyForce(Vector3 direction, ForceMode mode)
         {
