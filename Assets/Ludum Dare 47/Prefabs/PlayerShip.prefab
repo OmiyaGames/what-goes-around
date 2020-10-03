@@ -267,7 +267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 6218214451499258089}
   gravityStrength: 50
-  moveSpeed: 0.25
+  moveSpeed: 0.5
   inputSmooth: 50
 --- !u!54 &6218214451499258089
 Rigidbody:

@@ -60,7 +60,7 @@ namespace LudumDare47
 
         private void OnDrawGizmosSelected()
         {
-            if ((Target != null) && (transform.parent != null) && (Game.IsReady))
+            if (Game.IsReady && (Target != null) && (transform.parent != null))
             {
                 // Update plane of rotation
                 rotatePlane.SetNormalAndPosition(Game.Level.GetGravityDirection(transform.position), transform.position);
