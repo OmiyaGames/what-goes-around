@@ -8,6 +8,8 @@ namespace LudumDare47
     {
         [SerializeField]
         Transform center;
+        [SerializeField]
+        FollowCamera camera;
 
         /// <summary>
         /// Get the rotation info
@@ -16,6 +18,7 @@ namespace LudumDare47
         /// <returns></returns>
         public Quaternion GetOrientation(Vector3 worldPosition)
         {
+            return Quaternion.LookRotation(GetGravityDirection(worldPosition), camera.transform.up);
             return Quaternion.FromToRotation(Vector3.forward, GetGravityDirection(worldPosition));
         }
 

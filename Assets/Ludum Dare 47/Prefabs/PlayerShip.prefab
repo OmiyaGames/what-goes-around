@@ -116,7 +116,7 @@ MonoBehaviour:
   body: {fileID: 6218214451499258089}
   gravityStrength: 5000
   moveSpeed: 10
-  inputSmooth: 10
+  inputSmooth: 20
 --- !u!54 &6218214451499258089
 Rigidbody:
   m_ObjectHideFlags: 0

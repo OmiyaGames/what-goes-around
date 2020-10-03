@@ -41,7 +41,6 @@ namespace LudumDare47
         {
             rawInput.x = Input.GetAxis("Horizontal");
             rawInput.y = Input.GetAxis("Vertical");
-            rawInput.Normalize();
 
             // Look into other ways to smooth from last input to new one
             finalInput = Vector2.Lerp(finalInput, rawInput, (Time.deltaTime * inputSmooth));
@@ -62,8 +61,12 @@ namespace LudumDare47
 
         private void OnDrawGizmosSelected()
         {
+            Gizmos.color = Color.blue;
+            Vector3 direction = info.GetGravityDirection(transform);
+            Gizmos.DrawLine(transform.position, (transform.position + direction));
+
             Gizmos.color = Color.red;
-            Vector3 direction = Orientation * Vector3.right;
+            direction = Orientation * Vector3.right;
             Gizmos.DrawLine(transform.position, (transform.position + direction));
 
             Gizmos.color = Color.green;
@@ -71,8 +74,22 @@ namespace LudumDare47
             Gizmos.DrawLine(transform.position, (transform.position + direction));
         }
 
+        //private Vector3 ProjectDirectionOnPlane(Vector3 direction)
+        //{
+        //    Vector3 returnVector = Vector3.zero;
+        //    float magnitude = direction.magnitude;
+        //    if(Mathf.Approximately(magnitude, 0f) == false)
+        //    {
+        //        Vector3 normal = info.GetGravityDirection(transform) * -1f;
+        //        returnVector = (direction - normal * Vector3.Dot(direction, normal)).normalized;
+        //        returnVector *= magnitude;
+        //    }
+        //    return returnVector;
+        //}
+
         private void ApplyForce(Vector3 direction, ForceMode mode)
         {
+            //body.AddForce(ProjectDirectionOnPlane(direction * Time.deltaTime), mode);
             body.AddForce((Orientation * (direction * Time.deltaTime)), mode);
         }
 
