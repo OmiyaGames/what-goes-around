@@ -967,7 +967,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1774af6063f418442896f22c781fcf7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsToPreload: []
+  objectsToPreload:
+  - {fileID: 4032895080233864104, guid: ecb3ffefeadd1ac44ac34e92d8c562cf, type: 3}
 --- !u!1 &185162
 GameObject:
   m_ObjectHideFlags: 0

@@ -219,8 +219,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ship: {fileID: 4511071967573243336}
-  camera: {fileID: 4511071968233097514}
+  cameraScript: {fileID: 4511071968233097514}
   reticle: {fileID: 6677586897537471674}
+  currentLevel: {fileID: 0}
 --- !u!1001 &4511071967488525525
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -340,7 +341,7 @@ PrefabInstance:
     - target: {fileID: 6218214451499258088, guid: f6588643b12fb964fb00382916ad2bca,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: -10.5
       objectReference: {fileID: 0}
     - target: {fileID: 6218214451499258088, guid: f6588643b12fb964fb00382916ad2bca,
         type: 3}
@@ -382,6 +383,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6421342867469949252, guid: f6588643b12fb964fb00382916ad2bca,
+        type: 3}
+      propertyPath: aimAt
+      value: 
+      objectReference: {fileID: 733826152}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6588643b12fb964fb00382916ad2bca, type: 3}
 --- !u!4 &4511071967573243332 stripped

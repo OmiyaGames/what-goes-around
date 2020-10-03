@@ -14,12 +14,12 @@ TagManager:
   - 
   - 
   - Post-Processing
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player Collision
+  - Enemy Collision
+  - Player Bullet
+  - Enemy Bullet
+  - Player Hitbox
+  - Enemy Hitbox
   - 
   - 
   - 

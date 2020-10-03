@@ -1,38 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace LudumDare47
 {
     [RequireComponent(typeof(Rigidbody))]
-    public class PlayerShip : MonoBehaviour
+    public class PlayerShip : MovingObject
     {
-        [SerializeField]
-        LevelInfo info;
-
-        [Header("Physics")]
-        [SerializeField]
-        Rigidbody body;
-        [SerializeField]
-        float gravityStrength = 1000f;
-
         [Header("Controls")]
         [SerializeField]
+        [Range(0f, 1f)]
         float moveSpeed = 100f;
         [SerializeField]
         float inputSmooth = 10f;
-
-        public Quaternion Orientation
-        {
-            get;
-            private set;
-        } = Quaternion.identity;
-
-        public LevelInfo Level
-        {
-            private get => info;
-            set => info = value;
-        }
 
         Vector2 rawInput, finalInput;
 
@@ -47,25 +25,26 @@ namespace LudumDare47
             finalInput = Vector2.Lerp(finalInput, rawInput, (Time.deltaTime * inputSmooth));
         }
 
-        private void FixedUpdate()
+        public override void FixedUpdate()
         {
-            // First, update the rotation of this ship
-            Orientation = Level.GetOrientation(transform, Game.Camera.transform.up);
-            body.MoveRotation(Orientation);
-
-            // Apply gravity
-            ApplyForce((Vector3.forward * gravityStrength), ForceMode.Acceleration);
+            // Apply orientation and gravity
+            base.FixedUpdate();
 
             // Apply movement
             ApplyForce((finalInput * moveSpeed), ForceMode.VelocityChange);
         }
 
+        public override Quaternion CalculateLatestOrientation()
+        {
+            return Game.Level.GetOrientation(transform, Game.Camera.transform.up);
+        }
+
         private void OnDrawGizmosSelected()
         {
-            if (Level != null)
+            if (Game.IsReady && (Game.Level != null))
             {
                 Gizmos.color = Color.blue;
-                Vector3 direction = Level.GetGravityDirection(transform);
+                Vector3 direction = Game.Level.GetGravityDirection(transform);
                 Gizmos.DrawLine(transform.position, (transform.position + direction));
 
                 Gizmos.color = Color.red;
@@ -76,17 +55,6 @@ namespace LudumDare47
                 direction = Orientation * Vector3.up;
                 Gizmos.DrawLine(transform.position, (transform.position + direction));
             }
-        }
-
-        private void ApplyForce(Vector3 direction, ForceMode mode)
-        {
-            //body.AddForce(ProjectDirectionOnPlane(direction * Time.deltaTime), mode);
-            body.AddForce((Orientation * (direction * Time.deltaTime)), mode);
-        }
-
-        private void Reset()
-        {
-            body = GetComponent<Rigidbody>();
         }
     }
 }
