@@ -20,13 +20,14 @@ namespace LudumDare47
         [SerializeField]
         LaserStraight laser;
         [SerializeField]
-        Transform spawnPosition;
+        Transform[] spawnPositions;
         [SerializeField]
         float fireIntervals = 0.5f;
         [SerializeField]
         float startingDelaySeconds = 0.2f;
 
         float timeToFire = 0;
+        Plane rotatePlane = new Plane();
 
         public Transform Target
         {
@@ -46,24 +47,49 @@ namespace LudumDare47
 
             if (Time.time > timeToFire)
             {
-                SpawnLaser();
+                // Spawn all the lasers
+                foreach(Transform position in spawnPositions)
+                {
+                    SpawnLaser(position);
+                }
 
                 // Delay the next fire
                 timeToFire = (Time.time + fireIntervals);
             }
         }
 
+        private void OnDrawGizmosSelected()
+        {
+            if ((Target != null) && (transform.parent != null) && (Game.IsReady))
+            {
+                // Update plane of rotation
+                rotatePlane.SetNormalAndPosition(Game.Level.GetGravityDirection(transform.position), transform.position);
+
+                // Grab the closest point the thing we're aiming for on this plane
+                Vector3 lookDirection = rotatePlane.ClosestPointOnPlane(Target.position);
+
+                Gizmos.color = Color.white;
+                Gizmos.DrawWireSphere(lookDirection, 0.1f);
+            }
+        }
+
         private void AimAtTarget()
         {
-            if ((Target != null) && (transform.parent != null))
+            if (Game.IsReady && (Target != null) && (transform.parent != null))
             {
-                // Calculate the vector from gun to aimingAt
-                Vector3 lookDirection = Target.position - transform.position;
+                // Update plane of rotation
+                rotatePlane.SetNormalAndPosition(Game.Level.GetGravityDirection(transform.position), transform.position);
 
-                // Calculate direction to look
-                lookDirection = transform.parent.InverseTransformVector(lookDirection);
-                Quaternion rotation = Quaternion.FromToRotation(Vector3.right, lookDirection.normalized);
+                // Grab the closest point the thing we're aiming for on this plane
+                Vector3 lookDirection = rotatePlane.ClosestPointOnPlane(Target.position);
+
+                // Convert the world position to local
+                lookDirection = transform.parent.InverseTransformPoint(lookDirection);
                 //Debug.Log($"look: {lookDirection}");
+                lookDirection.Normalize();
+
+                // Convert this aiming position to a local rotation
+                Quaternion rotation = Quaternion.FromToRotation(Vector3.right, lookDirection);
                 //Debug.Log($"angle: {rotation.eulerAngles}");
 
                 // Rotate the gun
@@ -71,7 +97,7 @@ namespace LudumDare47
             }
         }
 
-        private void SpawnLaser()
+        private void SpawnLaser(Transform spawnPosition)
         {
             LaserStraight bullet = Singleton.Get<PoolingManager>().GetInstance(laser, spawnPosition.position, spawnPosition.rotation);
             if (inheritMomentum != null)
