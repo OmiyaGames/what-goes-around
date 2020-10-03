@@ -8,6 +8,8 @@ namespace LudumDare47
     {
         [SerializeField]
         PlayerShip follow;
+        [SerializeField]
+        Canvas reticleCanvas;
 
         [Header("Positioning")]
         [SerializeField]
@@ -19,6 +21,11 @@ namespace LudumDare47
 
         Quaternion targetRotation;
         Vector3 targetPosition;
+
+        private void Start()
+        {
+            reticleCanvas.planeDistance = positionOffset.magnitude;
+        }
 
         // Update is called once per frame
         void FixedUpdate()
