@@ -15,5 +15,10 @@ namespace LudumDare47
             //laser.Power
             laser.Destroy();
         }
+
+        public override void OnCollision(IEnemy enemy)
+        {
+            enemy.Destroy();
+        }
     }
 }

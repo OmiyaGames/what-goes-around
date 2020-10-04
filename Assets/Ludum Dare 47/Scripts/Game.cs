@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace LudumDare47
@@ -23,11 +24,12 @@ namespace LudumDare47
         [SerializeField]
         BeatKeeper beatKeeper;
 
+        readonly HashSet<IEnemy> allActiveEnemies = new HashSet<IEnemy>();
+        readonly HashSet<LaserStraight> allActiveLasers = new HashSet<LaserStraight>();
+        readonly HashSet<EnemySpawner> allActiveSpawners = new HashSet<EnemySpawner>();
+
         #region Properties
-        public static bool IsReady
-        {
-            get => (instance != null);
-        }
+        public static bool IsReady => (instance != null);
 
         public static PlayerShip Player
         {
@@ -120,6 +122,51 @@ namespace LudumDare47
                 {
                     OnBeforeBeatChanged?.Invoke(instance, instance.beatKeeper, value);
                     instance.beatKeeper = value;
+                }
+                else
+                {
+                    throw new Exception(InstanceNullMessage);
+                }
+            }
+        }
+
+        public static HashSet<IEnemy> AllActiveEnemies
+        {
+            get
+            {
+                if (IsReady)
+                {
+                    return instance.allActiveEnemies;
+                }
+                else
+                {
+                    throw new Exception(InstanceNullMessage);
+                }
+            }
+        }
+
+        public static HashSet<LaserStraight> AllActiveLasers
+        {
+            get
+            {
+                if (IsReady)
+                {
+                    return instance.allActiveLasers;
+                }
+                else
+                {
+                    throw new Exception(InstanceNullMessage);
+                }
+            }
+        }
+
+        public static HashSet<EnemySpawner> AllActiveSpawners
+        {
+            get
+            {
+                if (IsReady)
+                {
+                    return instance.allActiveSpawners;
                 }
                 else
                 {

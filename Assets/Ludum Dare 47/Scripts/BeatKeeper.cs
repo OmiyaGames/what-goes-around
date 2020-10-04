@@ -109,7 +109,7 @@ namespace LudumDare47
                 {
                     returnFlag = true;
                 }
-                else if ((double.Equals(NextTrigger, parent.firstBeat) == true) && (parent.music.time < LastTrigger))
+                else if ((Math.Abs(NextTrigger - parent.firstBeat) < Mathf.Epsilon) && (parent.music.time < LastTrigger))
                 {
                     returnFlag = true;
                 }
@@ -168,7 +168,7 @@ namespace LudumDare47
         {
             foreach (BeatStats stats in allStats.Values)
             {
-                //Debug.Log(music.time);
+                Debug.Log(music.time);
                 if (stats.IsOnBeat(this))
                 {
                     // Move on to next beat

@@ -18,6 +18,11 @@ namespace LudumDare47
 
         Vector2 rawInput, finalInput;
 
+        public bool IsAlive
+        {
+            get => true;
+        }
+
         // Update is called once per frame
         void Update()
         {

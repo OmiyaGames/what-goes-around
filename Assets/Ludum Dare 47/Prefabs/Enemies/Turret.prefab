@@ -61,6 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbb266c2434875d4ba2520a82fc6669a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  test: {fileID: 3090184137852945847}
 --- !u!1 &1302992327710661001
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,6 +185,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 7968603706668441325}
   gravityStrength: 1000
+  maxHealth: 4
+  baseScore: 5
+  basePower: 1
+  color: 0
+  health: 0
 --- !u!1 &7968603706750293692
 GameObject:
   m_ObjectHideFlags: 0

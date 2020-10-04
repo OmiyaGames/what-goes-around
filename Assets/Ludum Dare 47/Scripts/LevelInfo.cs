@@ -8,7 +8,18 @@ namespace LudumDare47
     {
         [SerializeField]
         Transform center;
+        [SerializeField]
+        EnemySpawner spawnerPrefab;
+        [SerializeField]
+        float radius = 20f;
 
+        // FIXME: this part needs help
+        [SerializeField]
+        BeatKeeper.Interval interval;
+        [SerializeField]
+        Turret spawnEnemyPrefab;
+
+        #region GetOrientation
         /// <summary>
         /// Get the rotation info
         /// </summary>
@@ -34,7 +45,9 @@ namespace LudumDare47
         {
             return GetOrientation(transform, transform.up);
         }
+        #endregion
 
+        #region GetGravityDirection
         /// <summary>
         /// The direction for gravity to affect a location
         /// </summary>
@@ -55,6 +68,25 @@ namespace LudumDare47
         public Vector3 GetGravityDirection(Transform transform)
         {
             return GetGravityDirection(transform.position);
+        }
+        #endregion
+
+        public Vector3 GetRandomSpawnLocation()
+        {
+            return Random.onUnitSphere * radius;
+        }
+
+        private void Start()
+        {
+            if (Game.IsReady)
+            {
+                Game.Beat.Schedule(interval, SpawnEnemy, true);
+            }
+        }
+
+        void SpawnEnemy(BeatKeeper source, BeatKeeper.BeatStats stats)
+        {
+            EnemySpawner.Spawn(spawnerPrefab, spawnEnemyPrefab, GetRandomSpawnLocation());
         }
     }
 }

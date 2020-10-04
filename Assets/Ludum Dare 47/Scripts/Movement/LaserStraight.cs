@@ -11,7 +11,11 @@ namespace LudumDare47
         [SerializeField]
         int power = 1;
         [SerializeField]
+        bool color = true;
+        [SerializeField]
         float lifeDurationSeconds = 1f;
+
+        [Header("Physics")]
         [SerializeField]
         Vector3 movementSpeed = new Vector3(1f, 0f);
 
@@ -34,13 +38,20 @@ namespace LudumDare47
             get => power;
         }
 
+        public bool Color => color;
+
         public override void Start()
         {
             base.Start();
 
-            // FIXME: figure out orientation
             deactivateAfter = Time.time + lifeDurationSeconds;
             Body.velocity = (InitialVelocity + CalculateLatestOrientation() * movementSpeed);
+
+            // Add to game
+            if (Game.IsReady)
+            {
+                Game.AllActiveLasers.Add(this);
+            }
         }
 
         public override Quaternion CalculateLatestOrientation()
@@ -53,21 +64,32 @@ namespace LudumDare47
             // Apply orientation and gravity
             base.FixedUpdate();
 
-            // Apply relative force
-            ApplyForce((movementSpeed * Time.deltaTime), ForceMode.VelocityChange);
+            // Check if we should deactivate soon
+            if (Time.time < deactivateAfter)
+            {
+                // Apply relative force
+                ApplyForce((movementSpeed * Time.deltaTime), ForceMode.VelocityChange);
+            }
+            else
+            {
+                Destroy();
+            }
+        }
+
+        public override void AfterDeactivate(PoolingManager manager)
+        {
+            base.AfterDeactivate(manager);
+
+            // Remove from game
+            if (Game.IsReady)
+            {
+                Game.AllActiveLasers.Remove(this);
+            }
         }
 
         public void Destroy()
         {
             PoolingManager.Destroy(gameObject);
-        }
-
-        private void Update()
-        {
-            if (Time.time > deactivateAfter)
-            {
-                Destroy();
-            }
         }
     }
 }
