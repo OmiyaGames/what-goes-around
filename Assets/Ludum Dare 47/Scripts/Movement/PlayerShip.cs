@@ -12,6 +12,10 @@ namespace LudumDare47
         [SerializeField]
         float inputSmooth = 10f;
 
+        [Header("Components")]
+        [SerializeField]
+        PlayerHealth healthManager;
+
         Vector2 rawInput, finalInput;
 
         // Update is called once per frame

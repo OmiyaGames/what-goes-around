@@ -29,6 +29,11 @@ namespace LudumDare47
             private set => body = value;
         }
 
+        public int Power
+        {
+            get => power;
+        }
+
         public override void Start()
         {
             base.Start();
@@ -52,11 +57,16 @@ namespace LudumDare47
             ApplyForce((movementSpeed * Time.deltaTime), ForceMode.VelocityChange);
         }
 
+        public void Destroy()
+        {
+            PoolingManager.Destroy(gameObject);
+        }
+
         private void Update()
         {
             if (Time.time > deactivateAfter)
             {
-                PoolingManager.Destroy(gameObject);
+                Destroy();
             }
         }
     }

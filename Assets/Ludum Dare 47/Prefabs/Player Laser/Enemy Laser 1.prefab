@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 3589914228215844311}
   - component: {fileID: 8930660086744740987}
   - component: {fileID: 4032895080233864104}
-  m_Layer: 11
-  m_Name: Player Laser 1
+  m_Layer: 12
+  m_Name: Enemy Laser 1
   m_TagString: Laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 07b2f311378200143b6096a44cda03db, type: 2}
+  - {fileID: 2100000, guid: b65178d2ca01a284a9e78c743ad98870, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -129,4 +129,4 @@ MonoBehaviour:
   gravityStrength: 100
   power: 1
   lifeDurationSeconds: 3
-  movementSpeed: {x: 20, y: 0, z: 0}
+  movementSpeed: {x: 10, y: 0, z: 0}
