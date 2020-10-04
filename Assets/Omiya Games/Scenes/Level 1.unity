@@ -280,6 +280,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7355a2d3c7c9f041bda2bef5e42fc68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1756237157 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1993670223270379640, guid: 922d1a7b6c7867c43ad9e11d52b5c9e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 7167978908467137904}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7075b09ebcbaa1469818a5b922ace8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1848217445
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -722,6 +734,11 @@ PrefabInstance:
       propertyPath: currentLevel
       value: 
       objectReference: {fileID: 1574334731}
+    - target: {fileID: 886253394012772473, guid: 7934c18200798ab4eb63d22a63e291bb,
+        type: 3}
+      propertyPath: beatKeeper
+      value: 
+      objectReference: {fileID: 1756237157}
     - target: {fileID: 1058143301422265886, guid: 7934c18200798ab4eb63d22a63e291bb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -856,11 +873,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1993670223270379640, guid: 922d1a7b6c7867c43ad9e11d52b5c9e8,
+        type: 3}
+      propertyPath: testBeat
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7762863960744006445, guid: 922d1a7b6c7867c43ad9e11d52b5c9e8,
         type: 3}
       propertyPath: m_Name
       value: Music 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9139107590866372706, guid: 922d1a7b6c7867c43ad9e11d52b5c9e8,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1afa6f658ff902646b92130b721e47b6, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 922d1a7b6c7867c43ad9e11d52b5c9e8, type: 3}
 --- !u!1001 &7968603706661952523
@@ -933,7 +960,7 @@ PrefabInstance:
     - target: {fileID: 7968603706668441326, guid: 6da158454ad4f2245a2ca9e2258f085f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7968603706750293682, guid: 6da158454ad4f2245a2ca9e2258f085f,
         type: 3}

@@ -142,3 +142,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   music: {fileID: 9139107590866372706}
+  firstBeat: 0.045
+  regularBeat: 0.5375
+  testBeat: {fileID: 0}

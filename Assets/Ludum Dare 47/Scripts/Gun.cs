@@ -1,7 +1,5 @@
 ﻿using OmiyaGames.Global;
 using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics.Contracts;
 using UnityEngine;
 
 namespace LudumDare47
@@ -22,14 +20,17 @@ namespace LudumDare47
         LaserStraight laser;
         [SerializeField]
         Transform[] spawnPositions;
-        [SerializeField]
-        float fireIntervals = 0.5f;
+
+        [Header("Timing")]
         [SerializeField]
         float startingDelaySeconds = 0.2f;
+        [SerializeField]
+        BeatKeeper.Interval beats;
 
-        float timeToFire = 0;
         Plane rotatePlane = new Plane();
         Quaternion targetRotation = Quaternion.identity;
+        Coroutine start = null;
+        System.Action<BeatKeeper, BeatKeeper.BeatStats> cacheAction = null;
 
         public Transform Target
         {
@@ -51,27 +52,28 @@ namespace LudumDare47
             return rotatePlane.ClosestPointOnPlane(target);
         }
 
-        private void Start()
+        private void OnEnable()
         {
-            timeToFire = (Time.time + startingDelaySeconds);
+            start = StartCoroutine(DelayScheduling());
+        }
+
+        private void OnDisable()
+        {
+            if (start != null)
+            {
+                StopCoroutine(start);
+                start = null;
+            }
+            if ((Game.IsReady) && (cacheAction != null))
+            {
+                Game.Beat.Unschedule(beats, cacheAction, true);
+            }
         }
 
         // Update is called once per frame
         void Update()
         {
             AimAtTarget();
-
-            if (Time.time > timeToFire)
-            {
-                // Spawn all the lasers
-                foreach (Transform position in spawnPositions)
-                {
-                    SpawnLaser(position);
-                }
-
-                // Delay the next fire
-                timeToFire = (Time.time + fireIntervals);
-            }
         }
 
         private void OnDrawGizmosSelected()
@@ -86,6 +88,34 @@ namespace LudumDare47
 
                 Gizmos.color = Color.white;
                 Gizmos.DrawWireSphere(lookDirection, 0.1f);
+            }
+        }
+
+        IEnumerator DelayScheduling()
+        {
+            //Debug.Log("Start Coroutine", this);
+            if (startingDelaySeconds > 0f)
+            {
+                yield return new WaitForSeconds(startingDelaySeconds);
+                //Debug.Log("Finished Start Delay", this);
+            }
+            if (Game.IsReady)
+            {
+                if (cacheAction == null)
+                {
+                    cacheAction = new System.Action<BeatKeeper, BeatKeeper.BeatStats>(FireLasers);
+                }
+                //Debug.Log("Scheduling", this);
+                Game.Beat.Schedule(beats, cacheAction, true);
+            }
+        }
+
+        void FireLasers(BeatKeeper keaper, BeatKeeper.BeatStats stats)
+        {
+            // Spawn all the lasers
+            foreach (Transform position in spawnPositions)
+            {
+                SpawnLaser(position);
             }
         }
 

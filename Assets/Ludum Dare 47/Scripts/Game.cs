@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.InteropServices;
 using UnityEngine;
 
 namespace LudumDare47
@@ -10,6 +9,7 @@ namespace LudumDare47
         private static Game instance = null;
 
         public static event Action<Game, LevelInfo, LevelInfo> OnBeforeLevelChanged;
+        public static event Action<Game, BeatKeeper, BeatKeeper> OnBeforeBeatChanged;
 
         [SerializeField]
         PlayerShip ship;
@@ -20,6 +20,8 @@ namespace LudumDare47
         Reticle reticle;
         [SerializeField]
         LevelInfo currentLevel;
+        [SerializeField]
+        BeatKeeper beatKeeper;
 
         #region Properties
         public static bool IsReady
@@ -91,6 +93,33 @@ namespace LudumDare47
                 {
                     OnBeforeLevelChanged?.Invoke(instance, instance.currentLevel, value);
                     instance.currentLevel = value;
+                }
+                else
+                {
+                    throw new Exception(InstanceNullMessage);
+                }
+            }
+        }
+
+        public static BeatKeeper Beat
+        {
+            get
+            {
+                if (IsReady)
+                {
+                    return instance.beatKeeper;
+                }
+                else
+                {
+                    throw new Exception(InstanceNullMessage);
+                }
+            }
+            set
+            {
+                if (instance != null)
+                {
+                    OnBeforeBeatChanged?.Invoke(instance, instance.beatKeeper, value);
+                    instance.beatKeeper = value;
                 }
                 else
                 {

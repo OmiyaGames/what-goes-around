@@ -128,8 +128,10 @@ MonoBehaviour:
   laser: {fileID: 4032895080233864104, guid: ecb3ffefeadd1ac44ac34e92d8c562cf, type: 3}
   spawnPositions:
   - {fileID: 7968603707704043064}
-  fireIntervals: 0.5
-  startingDelaySeconds: 0.25
+  startingDelaySeconds: 0.5
+  beats:
+    numerator: 3
+    denominator: 4
 --- !u!1 &7968603707704043065
 GameObject:
   m_ObjectHideFlags: 0
