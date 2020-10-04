@@ -203,8 +203,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19c716a710b64f4f9a63dc810a1ccb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  follow: {fileID: 0}
-  positionOffset: {x: 0, y: 0, z: -5}
+  positionOffset: {x: 0, y: 0, z: -6.25}
+  lookAhead: 1.25
   positionSmoothFactor: 20
   rotationSmoothFactor: 20
 --- !u!1 &1744156636990248

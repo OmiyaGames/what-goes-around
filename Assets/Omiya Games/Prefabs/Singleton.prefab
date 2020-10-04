@@ -969,6 +969,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsToPreload:
   - {fileID: 4032895080233864104, guid: ecb3ffefeadd1ac44ac34e92d8c562cf, type: 3}
+  - {fileID: 3090184137852945847, guid: 6da158454ad4f2245a2ca9e2258f085f, type: 3}
 --- !u!1 &185162
 GameObject:
   m_ObjectHideFlags: 0

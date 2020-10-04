@@ -1,6 +1,7 @@
 ﻿using OmiyaGames.Global;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using UnityEngine;
 
 namespace LudumDare47
@@ -28,11 +29,26 @@ namespace LudumDare47
 
         float timeToFire = 0;
         Plane rotatePlane = new Plane();
+        Quaternion targetRotation = Quaternion.identity;
 
         public Transform Target
         {
             get => aimAt;
             set => aimAt = value;
+        }
+
+        public static Vector3 GetPointOnPlane(Transform from, Transform target, Vector3 down, ref Plane rotatePlane)
+        {
+            return GetPointOnPlane(from, target.position, down, ref rotatePlane);
+        }
+
+        public static Vector3 GetPointOnPlane(Transform from, Vector3 target, Vector3 down, ref Plane rotatePlane)
+        {
+            // Update plane of rotation
+            rotatePlane.SetNormalAndPosition(down, from.position);
+
+            // Grab the closest point the thing we're aiming for on this plane
+            return rotatePlane.ClosestPointOnPlane(target);
         }
 
         private void Start()
@@ -48,7 +64,7 @@ namespace LudumDare47
             if (Time.time > timeToFire)
             {
                 // Spawn all the lasers
-                foreach(Transform position in spawnPositions)
+                foreach (Transform position in spawnPositions)
                 {
                     SpawnLaser(position);
                 }
@@ -77,23 +93,23 @@ namespace LudumDare47
         {
             if (Game.IsReady && (Target != null) && (transform.parent != null))
             {
-                // Update plane of rotation
-                rotatePlane.SetNormalAndPosition(Game.Level.GetGravityDirection(transform.position), transform.position);
-
                 // Grab the closest point the thing we're aiming for on this plane
-                Vector3 lookDirection = rotatePlane.ClosestPointOnPlane(Target.position);
+                Vector3 lookDirection = GetPointOnPlane(transform, Target, Game.Level.GetGravityDirection(transform.position), ref rotatePlane);
 
                 // Convert the world position to local
                 lookDirection = transform.parent.InverseTransformPoint(lookDirection);
-                //Debug.Log($"look: {lookDirection}");
-                lookDirection.Normalize();
+                if (Mathf.Approximately(lookDirection.sqrMagnitude, 0f) == false)
+                {
+                    //Debug.Log($"look: {lookDirection}");
+                    lookDirection.Normalize();
 
-                // Convert this aiming position to a local rotation
-                Quaternion rotation = Quaternion.FromToRotation(Vector3.right, lookDirection);
-                //Debug.Log($"angle: {rotation.eulerAngles}");
+                    // Convert this aiming position to a local rotation
+                    targetRotation = Quaternion.FromToRotation(Vector3.right, lookDirection);
+                    //Debug.Log($"angle: {targetRotation.eulerAngles}");
+                }
 
                 // Rotate the gun
-                transform.localRotation = Quaternion.Lerp(transform.localRotation, rotation, (aimingSmoothFactor * Time.deltaTime));
+                transform.localRotation = Quaternion.Lerp(transform.localRotation, targetRotation, (aimingSmoothFactor * Time.deltaTime));
             }
         }
 

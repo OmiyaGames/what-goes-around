@@ -701,7 +701,7 @@ PrefabInstance:
     - target: {fileID: 11491956, guid: e6de9bbfd0f4a40efae8b92c0481a228, type: 3}
       propertyPath: backgroundMusic
       value: 
-      objectReference: {fileID: 8300000, guid: 4bc7856847e2055498c2691bc4ce5ff8, type: 3}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6de9bbfd0f4a40efae8b92c0481a228, type: 3}
 --- !u!4 &2111598570 stripped
@@ -782,11 +782,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Global
       objectReference: {fileID: 0}
-    - target: {fileID: 3588300470528277608, guid: 7934c18200798ab4eb63d22a63e291bb,
-        type: 3}
-      propertyPath: spawnPositions.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4511071967573243336, guid: 7934c18200798ab4eb63d22a63e291bb,
         type: 3}
       propertyPath: info
@@ -799,6 +794,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7934c18200798ab4eb63d22a63e291bb, type: 3}
+--- !u!1001 &7167978908467137904
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1957306487432861137, guid: 922d1a7b6c7867c43ad9e11d52b5c9e8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1957306487432861137, guid: 922d1a7b6c7867c43ad9e11d52b5c9e8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1957306487432861137, guid: 922d1a7b6c7867c43ad9e11d52b5c9e8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1957306487432861137, guid: 922d1a7b6c7867c43ad9e11d52b5c9e8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1957306487432861137, guid: 922d1a7b6c7867c43ad9e11d52b5c9e8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1957306487432861137, guid: 922d1a7b6c7867c43ad9e11d52b5c9e8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1957306487432861137, guid: 922d1a7b6c7867c43ad9e11d52b5c9e8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1957306487432861137, guid: 922d1a7b6c7867c43ad9e11d52b5c9e8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1957306487432861137, guid: 922d1a7b6c7867c43ad9e11d52b5c9e8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1957306487432861137, guid: 922d1a7b6c7867c43ad9e11d52b5c9e8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1957306487432861137, guid: 922d1a7b6c7867c43ad9e11d52b5c9e8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762863960744006445, guid: 922d1a7b6c7867c43ad9e11d52b5c9e8,
+        type: 3}
+      propertyPath: m_Name
+      value: Music 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 922d1a7b6c7867c43ad9e11d52b5c9e8, type: 3}
 --- !u!1001 &7968603706661952523
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -865,6 +929,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968603706668441326, guid: 6da158454ad4f2245a2ca9e2258f085f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7968603706750293682, guid: 6da158454ad4f2245a2ca9e2258f085f,
         type: 3}
