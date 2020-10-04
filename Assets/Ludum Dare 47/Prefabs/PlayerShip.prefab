@@ -167,10 +167,11 @@ MonoBehaviour:
   body: {fileID: 6218214451499258089}
   gravityStrength: 50
   moveSpeed: 0.75
-  inputSmooth: 100
+  inputSmooth: 50
   maxHealth: 5
   invincibilityDurationSeconds: 1
   healthManager: {fileID: 3527427373233900365}
+  shipGraphic: {fileID: 6444780166910003941}
 --- !u!54 &6218214451499258089
 Rigidbody:
   m_ObjectHideFlags: 0

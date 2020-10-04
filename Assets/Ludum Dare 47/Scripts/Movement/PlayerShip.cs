@@ -25,6 +25,10 @@ namespace LudumDare47
         [Header("Components")]
         [SerializeField]
         PlayerHealth healthManager;
+        [SerializeField]
+        Transform shipGraphic;
+        [SerializeField]
+        float turnSmooth = 10f;
 
         Vector2 rawInput, finalInput;
         float invincibleFor = -1f;
@@ -103,6 +107,13 @@ namespace LudumDare47
 
             // Look into other ways to smooth from last input to new one
             finalInput = Vector2.Lerp(finalInput, rawInput, (Time.deltaTime * inputSmooth));
+
+            // Rotate graphic
+            if (Mathf.Approximately(finalInput.sqrMagnitude, 0) == false)
+            {
+                Quaternion targetRotation = Quaternion.FromToRotation(Vector3.right, finalInput.normalized);
+                shipGraphic.localRotation = Quaternion.Lerp(shipGraphic.localRotation, targetRotation, (turnSmooth * Time.deltaTime));
+            }
         }
 
         private void OnDrawGizmosSelected()
