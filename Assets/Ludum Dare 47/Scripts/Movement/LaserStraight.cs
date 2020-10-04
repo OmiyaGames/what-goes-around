@@ -5,7 +5,7 @@ using UnityEngine;
 namespace LudumDare47
 {
     [RequireComponent(typeof(Rigidbody))]
-    public class LaserStraight : MovingObject
+    public class LaserStraight : MovingObject, IDestroyable
     {
         [Header("Stats")]
         [SerializeField]

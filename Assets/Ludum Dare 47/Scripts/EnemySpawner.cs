@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace LudumDare47
 {
-    public class EnemySpawner : PooledObject
+    public class EnemySpawner : PooledObject, IDestroyable
     {
         [SerializeField]
         ParticleSystem burstParticles;
@@ -16,6 +16,8 @@ namespace LudumDare47
         Turret spawnEnemy;
         [SerializeField]
         BeatKeeper.Interval scheduleOnInterval;
+
+        System.Action<BeatKeeper, BeatKeeper.BeatStats> scheduledAction;
 
         public static EnemySpawner Spawn(EnemySpawner prefab, Turret spawnEnemy, Vector3 position)
         {
@@ -39,6 +41,8 @@ namespace LudumDare47
         {
             base.Start();
 
+            scheduledAction = new System.Action<BeatKeeper, BeatKeeper.BeatStats>(SpawnEnemy);
+
             // Restart particles
             burstParticles.Stop();
             burstParticles.Play();
@@ -46,7 +50,7 @@ namespace LudumDare47
             // Schedule spawning
             if (Game.IsReady)
             {
-                Game.Beat.Schedule(scheduleOnInterval, SpawnEnemy, false);
+                Game.Beat.Schedule(scheduleOnInterval, scheduledAction, false);
             }
 
             // Add to game
@@ -69,6 +73,7 @@ namespace LudumDare47
 
         public void Destroy()
         {
+            Game.Beat.Unschedule(scheduleOnInterval, scheduledAction, false);
             PoolingManager.Destroy(gameObject);
         }
 

@@ -14,9 +14,13 @@ namespace LudumDare47
         int basePower = 1;
         [SerializeField]
         bool color;
-
-        [Header("Test variables")]
         [SerializeField]
+        Gun gun;
+
+        [Header("Optional")]
+        [SerializeField]
+        bool aimAtPlayer;
+
         int health = 0;
 
         public int BasePower => basePower;
@@ -51,6 +55,19 @@ namespace LudumDare47
 
             // Return the enemy health back to max
             Health = maxHealth;
+
+            if (gun != null)
+            {
+                // Spin the gun in a random direction
+                float randomAngle = Random.Range(0f, 360f);
+                gun.transform.localRotation = Quaternion.Euler(0, 0, randomAngle);
+
+                // Check if we want to aim at the player
+                if ((aimAtPlayer == true) && Game.IsReady)
+                {
+                    gun.Target = Game.Player.transform;
+                }
+            }
 
             // Add to game
             if (Game.IsReady)

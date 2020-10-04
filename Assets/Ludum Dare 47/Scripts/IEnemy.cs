@@ -2,7 +2,7 @@
 
 namespace LudumDare47
 {
-    public interface IEnemy
+    public interface IEnemy : IHit, IDestroyable
     {
         int Health
         {
@@ -25,9 +25,5 @@ namespace LudumDare47
         }
 
         void Start();
-
-        void Destroy();
-
-        bool OnHit(int power, bool color);
     }
 }

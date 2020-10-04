@@ -125,6 +125,7 @@ namespace LudumDare47
         #endregion
 
         readonly Dictionary<Interval, BeatStats> allStats = new Dictionary<Interval, BeatStats>();
+        readonly List<BeatStats> cacheStats = new List<BeatStats>();
 
         public BeatStats GetBeatStats(Interval interval)
         {
@@ -166,9 +167,15 @@ namespace LudumDare47
         // Update is called once per frame
         void Update()
         {
-            foreach (BeatStats stats in allStats.Values)
+            // Cache allStats into a temporary list
+            // This is in case any function calls within foreach adds a new entry in the dictionary (possible!)
+            cacheStats.Clear();
+            cacheStats.AddRange(allStats.Values);
+
+            // Go through all stats in the temp list
+            foreach (BeatStats stats in cacheStats)
             {
-                Debug.Log(music.time);
+                //Debug.Log(music.time);
                 if (stats.IsOnBeat(this))
                 {
                     // Move on to next beat

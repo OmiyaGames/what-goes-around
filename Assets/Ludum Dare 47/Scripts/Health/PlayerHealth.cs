@@ -11,8 +11,7 @@ namespace LudumDare47
 
         public override void OnCollision(LaserStraight laser)
         {
-            // FIXME: look into the state of the laser, and adjust player accordingly
-            //laser.Power
+            ship.OnHit(laser.Power, laser.Color);
             laser.Destroy();
         }
 
