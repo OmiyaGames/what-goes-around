@@ -54,8 +54,8 @@ MonoBehaviour:
   - {fileID: 5431034511503050886}
   startingDelaySeconds: 0.1
   beats:
-    numerator: 3
-    denominator: 5
+    numerator: 1
+    denominator: 2
 --- !u!1 &3863800834721812383
 GameObject:
   m_ObjectHideFlags: 0

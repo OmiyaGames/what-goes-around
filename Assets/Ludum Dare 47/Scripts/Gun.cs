@@ -59,11 +59,14 @@ namespace LudumDare47
 
         private void OnDisable()
         {
+            // Stop any coroutines
             if (start != null)
             {
                 StopCoroutine(start);
                 start = null;
             }
+
+            // Unschedule laser firing
             if ((Game.IsReady) && (cacheAction != null))
             {
                 Game.Beat.Unschedule(beats, cacheAction, true);
@@ -93,19 +96,22 @@ namespace LudumDare47
 
         IEnumerator DelayScheduling()
         {
-            //Debug.Log("Start Coroutine", this);
+            // Delay before scheduling a turret
             if (startingDelaySeconds > 0f)
             {
                 yield return new WaitForSeconds(startingDelaySeconds);
-                //Debug.Log("Finished Start Delay", this);
             }
+
+            // Make sure everything is ready
             if (Game.IsReady)
             {
+                // Cache the FireLasers function
                 if (cacheAction == null)
                 {
                     cacheAction = new System.Action<BeatKeeper, BeatKeeper.BeatStats>(FireLasers);
                 }
-                //Debug.Log("Scheduling", this);
+
+                // Schedule firing lasers on repeat
                 Game.Beat.Schedule(beats, cacheAction, true);
             }
         }
