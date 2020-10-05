@@ -124,10 +124,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4878912538111896}
-  - component: {fileID: 81428408835554972}
   - component: {fileID: 95973574113549690}
   - component: {fileID: 6662560087604281817}
   - component: {fileID: 748801535}
+  - component: {fileID: 1783912462927633974}
   m_Layer: 8
   m_Name: Main Camera
   m_TagString: Untagged
@@ -152,14 +152,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 20.556, y: 0, z: 0}
---- !u!81 &81428408835554972
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1531348621268560}
-  m_Enabled: 1
 --- !u!95 &95973574113549690
 Animator:
   serializedVersion: 3
@@ -209,6 +201,14 @@ MonoBehaviour:
   rotationSmoothFactor: 20
   lookAhead: 2
   clampDistance: 8.75
+--- !u!81 &1783912462927633974
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531348621268560}
+  m_Enabled: 1
 --- !u!1 &1744156636990248
 GameObject:
   m_ObjectHideFlags: 0
