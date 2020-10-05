@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 7968603706668441324}
   - component: {fileID: 7968603706668441325}
   - component: {fileID: 3090184137852945847}
+  - component: {fileID: 2350304783557367346}
   m_Layer: 10
   m_Name: Turret - Auto Aim
   m_TagString: Enemy
@@ -191,6 +192,25 @@ MonoBehaviour:
   color: 0
   gun: {fileID: 7968603706750293682}
   aimAtPlayer: 1
+--- !u!95 &2350304783557367346
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7968603706668441326}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7968603706750293692
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,11 +404,31 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.48493004
       objectReference: {fileID: 0}
+    - target: {fileID: -2859109400176981367, guid: 5c95a1bac482b9740b0d71d23cea60c9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f542c719451852b448c460794b8fa2e4, type: 2}
     - target: {fileID: 919132149155446097, guid: 5c95a1bac482b9740b0d71d23cea60c9,
         type: 3}
       propertyPath: m_Name
       value: turret
       objectReference: {fileID: 0}
+    - target: {fileID: 3369906136111688320, guid: 5c95a1bac482b9740b0d71d23cea60c9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f542c719451852b448c460794b8fa2e4, type: 2}
+    - target: {fileID: 7041897213662635574, guid: 5c95a1bac482b9740b0d71d23cea60c9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f542c719451852b448c460794b8fa2e4, type: 2}
+    - target: {fileID: 7821625320815587429, guid: 5c95a1bac482b9740b0d71d23cea60c9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f542c719451852b448c460794b8fa2e4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c95a1bac482b9740b0d71d23cea60c9, type: 3}
 --- !u!4 &954624924926677874 stripped
@@ -478,7 +518,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: b65178d2ca01a284a9e78c743ad98870, type: 2}
+      objectReference: {fileID: 2100000, guid: de6013b41bedeed498d0250b181d07f9, type: 2}
     - target: {fileID: 919132149155446097, guid: ee895d2d83598b847a1803ea145f5fff,
         type: 3}
       propertyPath: m_Name
