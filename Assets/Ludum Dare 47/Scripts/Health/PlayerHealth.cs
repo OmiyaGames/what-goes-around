@@ -11,13 +11,19 @@ namespace LudumDare47
 
         public override void OnCollision(LaserStraight laser)
         {
-            ship.OnHit(laser.Power, laser.Color);
+            ship.OnHit(laser.Power, laser.Color, laser.transform);
             laser.Destroy();
         }
 
         public override void OnCollision(IEnemy enemy)
         {
-            ship.OnHit(enemy.BasePower, !ship.IsSecondaryColor);
+            Transform location = null;
+            MonoBehaviour script = enemy as MonoBehaviour;
+            if(script != null)
+            {
+                location = script.transform;
+            }
+            ship.OnHit(enemy.BasePower, !ship.IsSecondaryColor, location);
             enemy.Destroy();
         }
     }

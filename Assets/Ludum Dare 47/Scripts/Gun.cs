@@ -1,4 +1,5 @@
-﻿using OmiyaGames.Global;
+﻿using OmiyaGames.Audio;
+using OmiyaGames.Global;
 using System.Collections;
 using UnityEngine;
 
@@ -10,6 +11,8 @@ namespace LudumDare47
         Transform aimAt;
         [SerializeField]
         float aimingSmoothFactor = 10f;
+        [SerializeField]
+        SoundEffect sound;
 
         [Header("Parent")]
         [SerializeField]
@@ -177,6 +180,11 @@ namespace LudumDare47
             else
             {
                 bullet.InitialVelocity = Vector3.zero;
+            }
+
+            if(sound != null)
+            {
+                sound.Play();
             }
         }
     }

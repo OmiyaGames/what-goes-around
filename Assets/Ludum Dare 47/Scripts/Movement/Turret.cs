@@ -115,12 +115,13 @@ namespace LudumDare47
 
         public void Destroy()
         {
+            Game.SpawnExplosion(transform, true);
             PoolingManager.Destroy(gameObject);
         }
 
         public const float HitPause = 0.05f;
         //public const float ShakeMagnitude = 0.25f;
-        public bool OnHit(int power, bool color)
+        public bool OnHit(int power, bool color, Transform transform)
         {
             bool returnIsDead = false;
 
@@ -131,6 +132,7 @@ namespace LudumDare47
                 Health -= power;
             }
             animator.SetTrigger(HitTrigger);
+            Game.SpawnExplosion(transform, false);
 
             // Check if we're dead
             if (health == 0)

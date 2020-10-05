@@ -764,6 +764,10 @@ MonoBehaviour:
   currentLevel: {fileID: 0}
   beatKeeper: {fileID: 0}
   hud: {fileID: 5825469230158052771}
+  hitExplosion: {fileID: 8789157633221376239, guid: 419a0ae81f48ad44996c3169c03c0808,
+    type: 3}
+  destroyExplosion: {fileID: 3720471582022335104, guid: 9aac6013ce4b5cb40b6147220efc88bb,
+    type: 3}
 --- !u!1 &3169003566416267520
 GameObject:
   m_ObjectHideFlags: 0
@@ -1587,7 +1591,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1783912462927633974, guid: 0cb066fb0f0cf4a43a8d239b0f1b221e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0cb066fb0f0cf4a43a8d239b0f1b221e, type: 3}
 --- !u!4 &4506934813807684429 stripped
 Transform:

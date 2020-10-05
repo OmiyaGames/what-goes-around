@@ -45,7 +45,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 1afa6f658ff902646b92130b721e47b6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -144,4 +144,3 @@ MonoBehaviour:
   music: {fileID: 9139107590866372706}
   firstBeat: 0.045
   regularBeat: 0.5375
-  testBeat: {fileID: 0}

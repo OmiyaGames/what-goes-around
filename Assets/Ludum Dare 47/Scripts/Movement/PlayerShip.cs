@@ -1,4 +1,5 @@
-﻿using OmiyaGames.Global;
+﻿using OmiyaGames.Audio;
+using OmiyaGames.Global;
 using OmiyaGames.Menus;
 using OmiyaGames.Settings;
 using System.Collections;
@@ -41,6 +42,8 @@ namespace LudumDare47
         Animator animator;
         [SerializeField]
         Gun[] allGuns;
+        [SerializeField]
+        SoundEffect scoreSound;
 
         Vector2 rawInput, finalInput;
         float invincibleFor = -1f;
@@ -107,12 +110,13 @@ namespace LudumDare47
             return Game.Level.GetOrientation(transform, Game.Camera.transform.up);
         }
 
-        public bool OnHit(int power, bool color)
+        public bool OnHit(int power, bool color, Transform transform)
         {
             if (IsSecondaryColor == color)
             {
                 // Eventually add power-up mechanic here
                 Game.Score += 1;
+                scoreSound.Play();
             }
             else if (IsInvincible == false)
             {
@@ -130,6 +134,7 @@ namespace LudumDare47
                 }
                 Singleton.Get<CameraManager>().Effects.ShakeOnce(0, 0.5f);
                 Singleton.Get<TimeManager>().HitPause();
+                Game.SpawnExplosion(transform, false);
 
                 // Update Invincibility
                 invincibleFor = (Time.time + invincibilityDurationSeconds);

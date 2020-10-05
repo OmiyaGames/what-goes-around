@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OmiyaGames.Global;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,6 +27,10 @@ namespace LudumDare47
         BeatKeeper beatKeeper;
         [SerializeField]
         Hud hud;
+        [SerializeField]
+        Explosion hitExplosion;
+        [SerializeField]
+        Explosion destroyExplosion;
 
         int score = 0;
 
@@ -222,6 +227,27 @@ namespace LudumDare47
             }
         }
         #endregion
+
+        public static void SpawnExplosion(Transform place, bool destroyExplosion)
+        {
+            if (place != null)
+            {
+                if (IsReady)
+                {
+                    Explosion spawn = instance.hitExplosion;
+                    if (destroyExplosion)
+                    {
+                        spawn = instance.destroyExplosion;
+                    }
+
+                    Singleton.Get<PoolingManager>().GetInstance(spawn, place.position, place.rotation);
+                }
+                else
+                {
+                    throw new Exception(InstanceNullMessage);
+                }
+            }
+        }
 
         // Start is called before the first frame update
         void Awake()

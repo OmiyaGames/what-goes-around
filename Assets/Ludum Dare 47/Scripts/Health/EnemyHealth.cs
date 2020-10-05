@@ -26,7 +26,7 @@ namespace LudumDare47
             // Trigger the hit event on the main enemy script
             if (enemyHealth != null)
             {
-                enemyHealth.OnHit(laser.Power, laser.Color);
+                enemyHealth.OnHit(laser.Power, laser.Color, laser.transform);
             }
             laser.Destroy();
         }
