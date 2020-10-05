@@ -11,19 +11,19 @@ namespace LudumDare47
         public static readonly int HitTrigger = Animator.StringToHash("Hit");
 
         [SerializeField]
-        int maxHealth = 4;
+        protected int maxHealth = 4;
         [SerializeField]
-        int baseScore = 5;
+        protected int baseScore = 5;
         [SerializeField]
-        int basePower = 1;
+        protected int basePower = 1;
         [SerializeField]
-        Gun gun;
+        protected Gun gun;
         [SerializeField]
-        Animator animator;
+        protected Animator animator;
 
         [Header("Optional")]
         [SerializeField]
-        bool aimAtPlayer;
+        protected bool aimAtPlayer;
 
         int health = 0;
         bool color = Game.DefaultIsSecondaryColor;
@@ -38,7 +38,10 @@ namespace LudumDare47
                 if (color != value)
                 {
                     color = value;
-                    gun.IsSecondaryColor = value;
+                    if (gun != null)
+                    {
+                        gun.IsSecondaryColor = value;
+                    }
                     animator.SetBool(ColorField, color);
                 }
             }

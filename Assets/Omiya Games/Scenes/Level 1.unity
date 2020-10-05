@@ -657,6 +657,11 @@ PrefabInstance:
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 9166618691056412038, guid: fbdc25fd0c29e31439357e1a7b20f936,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbdc25fd0c29e31439357e1a7b20f936, type: 3}
 --- !u!1001 &1896714845
@@ -994,6 +999,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8303190029400873743, guid: 7934c18200798ab4eb63d22a63e291bb,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 8368761890792194991, guid: 7934c18200798ab4eb63d22a63e291bb,
         type: 3}

@@ -52,12 +52,14 @@ namespace LudumDare47
 
         public bool IsAlive => Health > 0;
 
+        public int MaxHealth => maxHealth;
+
         public int Health
         {
             get => health;
             private set
             {
-                health = Mathf.Clamp(value, 0, maxHealth);
+                health = Mathf.Clamp(value, 0, MaxHealth);
                 if (Game.IsReady)
                 {
                     Game.Hud.DisplayHealth = health;

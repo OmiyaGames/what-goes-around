@@ -113,8 +113,11 @@ MonoBehaviour:
     type: 3}
   radius: 10
   interval:
-    numerator: 4
+    numerator: 3
     denominator: 1
   spawnEnemyPrefabs:
   - {fileID: 3090184137852945847, guid: 39a2f0e06a8800f4ab8bf59f55166bc5, type: 3}
   - {fileID: 5711403020370787440, guid: 6da158454ad4f2245a2ca9e2258f085f, type: 3}
+  - {fileID: 5847033585665956830, guid: 814ae38e9c33327469c5faae4a0308b5, type: 3}
+  - {fileID: 6443520333632448684, guid: 612abedf1bab1e14aa34bfa2ce3c2fd1, type: 3}
+  - {fileID: 133474230441946855, guid: 49537c214f3d85f46831692fe34392ee, type: 3}

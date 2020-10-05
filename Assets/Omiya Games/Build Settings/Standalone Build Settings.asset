@@ -132,7 +132,7 @@ MonoBehaviour:
   customScriptDefineSymbols:
     enable: 0
     customValue: 
-  architecture: 0
+  architecture: 1
   compression: 2
   scriptingBackend: 0
   enableHeadlessMode: 0
@@ -169,7 +169,7 @@ MonoBehaviour:
     - type: 0
       text: )
     asSlug: 0
-  buildNumber: 2
+  buildNumber: 1
   enableStrictMode: 0
   enableAssertions: 0
   customScenes:
@@ -459,7 +459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentSetting: {fileID: 114269241718195048}
   archiveSettings:
-    enable: 1
+    enable: 0
     type: 0
     fileName:
       names:
@@ -579,7 +579,7 @@ MonoBehaviour:
     - type: 0
       text: )
     asSlug: 0
-  buildNumber: 3
+  buildNumber: 1
   enableStrictMode: 0
   enableAssertions: 0
   customScenes:
@@ -699,6 +699,6 @@ MonoBehaviour:
   customScriptDefineSymbols:
     enable: 0
     customValue: 
-  architecture: 0
+  architecture: 1
   compression: 2
   scriptingBackend: 0

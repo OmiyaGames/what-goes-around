@@ -289,7 +289,7 @@ MonoBehaviour:
   gravityStrength: 50
   moveSpeed: 0.75
   inputSmooth: 50
-  maxHealth: 5
+  maxHealth: 7
   invincibilityDurationSeconds: 1
   flashPrimaryColor: {r: 0, g: 0, b: 0, a: 0}
   flashSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
@@ -447,7 +447,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 723abca856d1caf4ab51e49b9afb46e1, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0

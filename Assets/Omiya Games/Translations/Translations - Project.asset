@@ -89,11 +89,7 @@ MonoBehaviour:
   - key: Game Title
     allTranslations:
     - languageIndex: 0
-      text: Template Unity Project
-    - languageIndex: 1
-      text: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8\u4E00\u25CF\u30E6\u30CB\u30C6\u30A3\u30FC\u25CF\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8"
-    - languageIndex: 2
-      text: Ethay Ecursiveray Ollhouseday
+      text: What Goes Around
   - key: Health
     allTranslations:
     - languageIndex: 0
@@ -115,18 +111,18 @@ MonoBehaviour:
 
 
         *
-        Tap space to toggle ship color.
+        Tap the space bar or right-CTRL to toggle ship color.
 
 
         <b>Tips:</b>
 
 
-        * Lasers
-        with the same color as your ship does not hurt you.
+        *
+        Lasers with the same color as your ship does not hurt you.
 
 
-        * Running into
-        enemies <i>will</i> hurt your ship.
+        * Running
+        into enemies <i>will</i> hurt your ship.
 
 
         * Enemies are weak against
