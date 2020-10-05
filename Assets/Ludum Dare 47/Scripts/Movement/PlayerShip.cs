@@ -9,6 +9,8 @@ namespace LudumDare47
     [RequireComponent(typeof(Rigidbody))]
     public class PlayerShip : MovingObject, IHit
     {
+        public static readonly int ColorField = Animator.StringToHash("Color");
+
         [Header("Controls")]
         [SerializeField]
         [Range(0f, 1f)]
@@ -29,10 +31,13 @@ namespace LudumDare47
         Transform shipGraphic;
         [SerializeField]
         float turnSmooth = 10f;
+        [SerializeField]
+        Animator animator;
 
         Vector2 rawInput, finalInput;
         float invincibleFor = -1f;
         int health = 1;
+        bool color = false;
 
         public bool IsAlive => Health > 0;
 
@@ -44,8 +49,15 @@ namespace LudumDare47
 
         public bool ShipColor
         {
-            get;
-            private set;
+            get => color;
+            private set
+            {
+                if (color != value)
+                {
+                    color = value;
+                    animator.SetBool(ColorField, color);
+                }
+            }
         }
 
         public bool IsInvincible
@@ -104,6 +116,12 @@ namespace LudumDare47
             // Grab the raw, input direction
             rawInput.x = Input.GetAxis("Horizontal");
             rawInput.y = Input.GetAxis("Vertical");
+
+            // Check if we need to toggle color
+            if (Input.GetButtonDown("Jump") == true)
+            {
+                ShipColor = !ShipColor;
+            }
 
             // Look into other ways to smooth from last input to new one
             finalInput = Vector2.Lerp(finalInput, rawInput, (Time.deltaTime * inputSmooth));
