@@ -24,6 +24,10 @@ namespace LudumDare47
         LevelInfo currentLevel;
         [SerializeField]
         BeatKeeper beatKeeper;
+        [SerializeField]
+        Hud hud;
+
+        int score = 0;
 
         readonly HashSet<IEnemy> allActiveEnemies = new HashSet<IEnemy>();
         readonly HashSet<LaserStraight> allActiveLasers = new HashSet<LaserStraight>();
@@ -69,6 +73,21 @@ namespace LudumDare47
                 if (IsReady)
                 {
                     return instance.reticle;
+                }
+                else
+                {
+                    throw new Exception(InstanceNullMessage);
+                }
+            }
+        }
+
+        public static Hud Hud
+        {
+            get
+            {
+                if (IsReady)
+                {
+                    return instance.hud;
                 }
                 else
                 {
@@ -168,6 +187,33 @@ namespace LudumDare47
                 if (IsReady)
                 {
                     return instance.allActiveSpawners;
+                }
+                else
+                {
+                    throw new Exception(InstanceNullMessage);
+                }
+            }
+        }
+
+        public static int Score
+        {
+            get
+            {
+                if (IsReady)
+                {
+                    return instance.score;
+                }
+                else
+                {
+                    throw new Exception(InstanceNullMessage);
+                }
+            }
+            set
+            {
+                if (IsReady)
+                {
+                    instance.score = value;
+                    instance.hud.DisplayScore = value;
                 }
                 else
                 {

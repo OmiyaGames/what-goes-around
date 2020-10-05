@@ -1,5 +1,6 @@
 ﻿using OmiyaGames.Global;
 using OmiyaGames.Menus;
+using OmiyaGames.Settings;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -51,7 +52,14 @@ namespace LudumDare47
         public int Health
         {
             get => health;
-            private set => health = Mathf.Clamp(value, 0, maxHealth);
+            private set
+            {
+                health = Mathf.Clamp(value, 0, maxHealth);
+                if (Game.IsReady)
+                {
+                    Game.Hud.DisplayHealth = health;
+                }
+            }
         }
 
         public bool IsSecondaryColor
@@ -62,7 +70,7 @@ namespace LudumDare47
                 if (color != value)
                 {
                     color = value;
-                    foreach(var gun in allGuns)
+                    foreach (var gun in allGuns)
                     {
                         gun.IsSecondaryColor = value;
                     }
@@ -104,6 +112,7 @@ namespace LudumDare47
             if (IsSecondaryColor == color)
             {
                 // Eventually add power-up mechanic here
+                Game.Score += 1;
             }
             else if (IsInvincible == false)
             {
@@ -120,6 +129,7 @@ namespace LudumDare47
                     Singleton.Get<CameraManager>().Effects.FlashOnce(flashPrimaryColor);
                 }
                 Singleton.Get<CameraManager>().Effects.ShakeOnce(0, 0.5f);
+                Singleton.Get<TimeManager>().HitPause();
 
                 // Update Invincibility
                 invincibleFor = (Time.time + invincibilityDurationSeconds);
@@ -213,6 +223,17 @@ namespace LudumDare47
             // Show menus
             Singleton.Get<MenuManager>().Show<LevelFailedMenu>();
             Singleton.Get<MenuManager>().Show<HighScoresMenu>();
+
+            // Check if we got a high score
+            ISortedRecords<int> highScores = Singleton.Get<GameSettings>().HighScores;
+            string name = Singleton.Get<GameSettings>().LastEnteredName;
+            int rank = highScores.AddRecord(Game.Score, name, out IRecord<int> newRecord);
+            if (rank >= 0)
+            {
+                NewHighScoreMenu menu = Singleton.Get<MenuManager>().GetMenu<NewHighScoreMenu>();
+                menu.Setup(rank, newRecord);
+                menu.Show();
+            }
         }
     }
 }

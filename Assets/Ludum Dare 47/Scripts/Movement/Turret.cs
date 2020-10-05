@@ -118,6 +118,8 @@ namespace LudumDare47
             PoolingManager.Destroy(gameObject);
         }
 
+        public const float HitPause = 0.05f;
+        //public const float ShakeMagnitude = 0.25f;
         public bool OnHit(int power, bool color)
         {
             bool returnIsDead = false;
@@ -134,6 +136,9 @@ namespace LudumDare47
             if (health == 0)
             {
                 returnIsDead = true;
+                Game.Score += BaseScore;
+                //Singleton.Get<CameraManager>().Effects.ShakeOnce(0.25f);
+                Singleton.Get<TimeManager>().PauseFor(HitPause);
                 Destroy();
             }
             return returnIsDead;

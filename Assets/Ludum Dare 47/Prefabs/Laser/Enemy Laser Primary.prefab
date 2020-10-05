@@ -4820,7 +4820,7 @@ MonoBehaviour:
   gravityStrength: 100
   power: 1
   isSecondaryColor: 0
-  lifeDurationSeconds: 2
+  lifeDurationSeconds: 2.5
   movementSpeed: {x: 10, y: 0, z: 0}
 --- !u!114 &3088375653286313986
 MonoBehaviour:
