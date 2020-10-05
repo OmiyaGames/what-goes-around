@@ -10,6 +10,7 @@ namespace LudumDare47
     public class PlayerShip : MovingObject, IHit
     {
         public static readonly int ColorField = Animator.StringToHash("Color");
+        public static readonly int InvincibleField = Animator.StringToHash("Invincible");
 
         [Header("Controls")]
         [SerializeField]
@@ -23,6 +24,10 @@ namespace LudumDare47
         int maxHealth = 5;
         [SerializeField]
         float invincibilityDurationSeconds = 1.5f;
+        [SerializeField]
+        Color flashPrimaryColor;
+        [SerializeField]
+        Color flashSecondaryColor;
 
         [Header("Components")]
         [SerializeField]
@@ -47,7 +52,7 @@ namespace LudumDare47
             private set => health = Mathf.Clamp(value, 0, maxHealth);
         }
 
-        public bool ShipColor
+        public bool IsShipColorPrimary
         {
             get => color;
             private set
@@ -55,7 +60,6 @@ namespace LudumDare47
                 if (color != value)
                 {
                     color = value;
-                    animator.SetBool(ColorField, color);
                 }
             }
         }
@@ -91,14 +95,27 @@ namespace LudumDare47
 
         public bool OnHit(int power, bool color)
         {
-            if (ShipColor == color)
+            if (IsShipColorPrimary == color)
             {
                 // Eventually add power-up mechanic here
             }
             else if (IsInvincible == false)
             {
-                // If not invincible
+                // If not invincible decrement health
                 Health -= 1;
+
+                // Run Screen Effects
+                if (IsShipColorPrimary)
+                {
+                    Singleton.Get<CameraManager>().Effects.FlashOnce(flashSecondaryColor);
+                }
+                else
+                {
+                    Singleton.Get<CameraManager>().Effects.FlashOnce(flashPrimaryColor);
+                }
+                Singleton.Get<CameraManager>().Effects.ShakeOnce(0, 0.5f);
+
+                // Update Invincibility
                 invincibleFor = (Time.time + invincibilityDurationSeconds);
 
                 // Check if dead
@@ -120,8 +137,12 @@ namespace LudumDare47
             // Check if we need to toggle color
             if (Input.GetButtonDown("Jump") == true)
             {
-                ShipColor = !ShipColor;
+                IsShipColorPrimary = !IsShipColorPrimary;
             }
+
+            // Update animator
+            animator.SetBool(InvincibleField, IsInvincible);
+            animator.SetBool(ColorField, IsShipColorPrimary);
 
             // Look into other ways to smooth from last input to new one
             finalInput = Vector2.Lerp(finalInput, rawInput, (Time.deltaTime * inputSmooth));

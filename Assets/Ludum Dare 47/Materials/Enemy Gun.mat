@@ -7,15 +7,15 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Enemy Laser Primary
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_ShaderKeywords: _EMISSION
-  m_LightmapFlags: 2
+  m_Name: PlayerGun
+  m_Shader: {fileID: -6465566751694194690, guid: 8869d7b5b97fc0e4fa062c8e1366db82,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
-  stringTagMap:
-    RenderType: Opaque
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -49,6 +49,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_405576F7: 4.45
+    - Vector1_5095FA46: 7.5
+    - Vector1_CDF14038: 0.65
+    - Vector1_E765FD4: 2
+    - Vector1_F93D0C6D: 0
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -63,17 +68,23 @@ Material:
     - _OcclusionStrength: 1
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0.65
+    - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
+    - colorSlider: 0
     m_Colors:
-    - _BaseColor: {r: 0.90196085, g: 0.62352943, b: 0, a: 1}
+    - Color_1C83847C: {r: 0.8352942, g: 0.36862746, b: 0, a: 1}
+    - Color_5D89794E: {r: 1, g: 1, b: 1, a: 1}
+    - Color_815FE794: {r: 0, g: 0.44705886, b: 0.6980392, a: 1}
+    - Color_87CCE80B: {r: 0.8352941, g: 0.36862743, b: 0, a: 1}
+    - Color_9EA8D38C: {r: 0.33725488, g: 0.7058823, b: 0.9137255, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0.5019608, g: 0.21960784, b: 0, a: 1}
+    - _EmissionColor: {r: 0.311, g: 0.311, b: 0.311, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &8205832356873873773
