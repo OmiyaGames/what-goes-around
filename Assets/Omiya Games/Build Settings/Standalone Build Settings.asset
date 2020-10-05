@@ -101,7 +101,7 @@ MonoBehaviour:
     - type: 0
       text: )
     asSlug: 0
-  buildNumber: 1
+  buildNumber: 2
   enableStrictMode: 0
   enableAssertions: 0
   customScenes:
@@ -169,7 +169,7 @@ MonoBehaviour:
     - type: 0
       text: )
     asSlug: 0
-  buildNumber: 1
+  buildNumber: 2
   enableStrictMode: 0
   enableAssertions: 0
   customScenes:
@@ -281,7 +281,7 @@ MonoBehaviour:
     - type: 0
       text: )
     asSlug: 0
-  buildNumber: 1
+  buildNumber: 2
   enableStrictMode: 0
   enableAssertions: 0
   customScenes:
@@ -579,7 +579,7 @@ MonoBehaviour:
     - type: 0
       text: )
     asSlug: 0
-  buildNumber: 1
+  buildNumber: 2
   enableStrictMode: 0
   enableAssertions: 0
   customScenes:
@@ -668,7 +668,7 @@ MonoBehaviour:
     - type: 0
       text: )
     asSlug: 0
-  buildNumber: 1
+  buildNumber: 2
   enableStrictMode: 0
   enableAssertions: 0
   customScenes:
