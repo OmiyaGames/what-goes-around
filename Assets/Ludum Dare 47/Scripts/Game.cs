@@ -6,6 +6,7 @@ namespace LudumDare47
 {
     public class Game : MonoBehaviour
     {
+        public const bool DefaultIsSecondaryColor = false;
         private const string InstanceNullMessage = "Game not setup correctly: are you accessing this in Awake?";
         private static Game instance = null;
 

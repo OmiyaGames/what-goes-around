@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8930660086744740987}
   - component: {fileID: 4032895080233864104}
   m_Layer: 11
-  m_Name: Player Laser 1
+  m_Name: Player Laser Primary
   m_TagString: Laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,5 +128,6 @@ MonoBehaviour:
   body: {fileID: 8930660086744740987}
   gravityStrength: 100
   power: 1
+  color: 0
   lifeDurationSeconds: 3
   movementSpeed: {x: 20, y: 0, z: 0}

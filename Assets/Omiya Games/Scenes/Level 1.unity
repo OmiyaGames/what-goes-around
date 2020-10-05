@@ -199,18 +199,6 @@ Light:
     type: 3}
   m_PrefabInstance: {fileID: 564962070}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &748801535 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4511071968233097514, guid: 7934c18200798ab4eb63d22a63e291bb,
-    type: 3}
-  m_PrefabInstance: {fileID: 4511071967359572526}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19c716a710b64f4f9a63dc810a1ccb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1229846433
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -896,11 +884,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level - Outside Sphere
       objectReference: {fileID: 0}
-    - target: {fileID: 8368396864284041084, guid: 70ae68825f803664aae7236b5f81b16a,
-        type: 3}
-      propertyPath: camera
-      value: 
-      objectReference: {fileID: 748801535}
     - target: {fileID: 8368396864284041085, guid: 70ae68825f803664aae7236b5f81b16a,
         type: 3}
       propertyPath: m_LocalPosition.x

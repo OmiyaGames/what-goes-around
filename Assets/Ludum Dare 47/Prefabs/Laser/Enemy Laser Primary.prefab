@@ -4819,8 +4819,8 @@ MonoBehaviour:
   body: {fileID: 8930660086744740987}
   gravityStrength: 100
   power: 1
-  color: 0
-  lifeDurationSeconds: 3
+  isSecondaryColor: 0
+  lifeDurationSeconds: 2
   movementSpeed: {x: 10, y: 0, z: 0}
 --- !u!114 &3088375653286313986
 MonoBehaviour:

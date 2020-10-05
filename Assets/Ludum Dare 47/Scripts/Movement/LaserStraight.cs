@@ -11,7 +11,8 @@ namespace LudumDare47
         [SerializeField]
         int power = 1;
         [SerializeField]
-        bool color = true;
+        [UnityEngine.Serialization.FormerlySerializedAs("color")]
+        bool isSecondaryColor = true;
         [SerializeField]
         float lifeDurationSeconds = 1f;
 
@@ -38,7 +39,7 @@ namespace LudumDare47
             get => power;
         }
 
-        public bool Color => color;
+        public bool Color => isSecondaryColor;
 
         public override void Start()
         {

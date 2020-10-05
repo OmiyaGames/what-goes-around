@@ -17,6 +17,7 @@ namespace LudumDare47
 
         public override void OnCollision(IEnemy enemy)
         {
+            ship.OnHit(enemy.BasePower, !ship.IsSecondaryColor);
             enemy.Destroy();
         }
     }

@@ -6,6 +6,10 @@ namespace LudumDare47
     [RequireComponent(typeof(Rigidbody))]
     public class Turret : MovingObject, IEnemy
     {
+        public static readonly int ColorField = Animator.StringToHash("Color");
+        public static readonly int SpawnTrigger = Animator.StringToHash("Spawn");
+        public static readonly int HitTrigger = Animator.StringToHash("Hit");
+
         [SerializeField]
         int maxHealth = 4;
         [SerializeField]
@@ -13,18 +17,32 @@ namespace LudumDare47
         [SerializeField]
         int basePower = 1;
         [SerializeField]
-        bool color;
-        [SerializeField]
         Gun gun;
+        [SerializeField]
+        Animator animator;
 
         [Header("Optional")]
         [SerializeField]
         bool aimAtPlayer;
 
         int health = 0;
+        bool color = Game.DefaultIsSecondaryColor;
 
         public int BasePower => basePower;
-        public bool Color => color;
+
+        public bool IsSecondaryColor
+        {
+            get => color;
+            set
+            {
+                if (color != value)
+                {
+                    color = value;
+                    gun.IsSecondaryColor = value;
+                    animator.SetBool(ColorField, color);
+                }
+            }
+        }
 
         public int Health
         {
@@ -55,6 +73,9 @@ namespace LudumDare47
 
             // Return the enemy health back to max
             Health = maxHealth;
+
+            // Play spawn animation
+            animator.SetTrigger(SpawnTrigger);
 
             if (gun != null)
             {
@@ -103,10 +124,11 @@ namespace LudumDare47
 
             // Decrement health
             Health -= power;
-            if (this.Color != color)
+            if (this.IsSecondaryColor != color)
             {
                 Health -= power;
             }
+            animator.SetTrigger(HitTrigger);
 
             // Check if we're dead
             if (health == 0)

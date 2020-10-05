@@ -48,7 +48,10 @@ MonoBehaviour:
   aimAt: {fileID: 0}
   aimingSmoothFactor: 10
   inheritMomentum: {fileID: 6218214451499258089}
-  laser: {fileID: 4032895080233864104, guid: ecb3ffefeadd1ac44ac34e92d8c562cf, type: 3}
+  primaryColorLaser: {fileID: 4032895080233864104, guid: ecb3ffefeadd1ac44ac34e92d8c562cf,
+    type: 3}
+  secondaryColorLaser: {fileID: 6215948841828407315, guid: 9e632be1bd347fc44a06950323b704e2,
+    type: 3}
   spawnPositions:
   - {fileID: 4378920083690442194}
   startingDelaySeconds: 0.1
@@ -171,10 +174,14 @@ MonoBehaviour:
   inputSmooth: 50
   maxHealth: 5
   invincibilityDurationSeconds: 1
+  flashPrimaryColor: {r: 0, g: 0, b: 0, a: 0}
+  flashSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
   healthManager: {fileID: 3527427373233900365}
   shipGraphic: {fileID: 6444780166910003941}
   turnSmooth: 10
   animator: {fileID: 2892113222459189754}
+  allGuns:
+  - {fileID: 6421342867469949252}
 --- !u!54 &6218214451499258089
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerGun
+  m_Name: Enemy Gun
   m_Shader: {fileID: -6465566751694194690, guid: 8869d7b5b97fc0e4fa062c8e1366db82,
     type: 3}
   m_ShaderKeywords: 
@@ -51,7 +51,7 @@ Material:
     m_Floats:
     - Vector1_405576F7: 4.45
     - Vector1_5095FA46: 7.5
-    - Vector1_CDF14038: 0.65
+    - Vector1_CDF14038: 0.5
     - Vector1_E765FD4: 2
     - Vector1_F93D0C6D: 0
     - _AlphaClip: 0

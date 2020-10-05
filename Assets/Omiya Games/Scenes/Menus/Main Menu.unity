@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 11653233c7536443d859601b1c1020d3, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 6a0acabfabdc69746ade61c644cb7a68, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1061762490}
-  m_IndirectSpecularColor: {r: 0.2846213, g: 0.3712097, b: 0.49880555, a: 1}
+  m_IndirectSpecularColor: {r: 0.20429409, g: 0.13708018, b: 0.14944698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -356,6 +356,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2651769834100697117, guid: 38cd0f67799ad854888f767c6ec098bf,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2651825697658655828, guid: 38cd0f67799ad854888f767c6ec098bf,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -494,7 +499,7 @@ PrefabInstance:
     - target: {fileID: 2651967689346873474, guid: 38cd0f67799ad854888f767c6ec098bf,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2651972327093747507, guid: 38cd0f67799ad854888f767c6ec098bf,
         type: 3}
@@ -654,7 +659,7 @@ PrefabInstance:
     - target: {fileID: 2652099986101912938, guid: 38cd0f67799ad854888f767c6ec098bf,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2652117671177890801, guid: 38cd0f67799ad854888f767c6ec098bf,
         type: 3}
@@ -925,6 +930,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textAlignment
       value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 2757955702195272149, guid: 38cd0f67799ad854888f767c6ec098bf,
+        type: 3}
+      propertyPath: controlsButton.enabledFor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2757955702195272149, guid: 38cd0f67799ad854888f767c6ec098bf,
+        type: 3}
+      propertyPath: languageButton.enabledFor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2757955702195272149, guid: 38cd0f67799ad854888f767c6ec098bf,
+        type: 3}
+      propertyPath: resetDataButton.enabledFor
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2758041760224200353, guid: 38cd0f67799ad854888f767c6ec098bf,
         type: 3}

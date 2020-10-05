@@ -81,7 +81,8 @@ namespace LudumDare47
         {
             if (Game.IsReady && Game.Player.IsAlive && isActiveAndEnabled)
             {
-                Singleton.Get<PoolingManager>().GetInstance(spawnEnemy, spawnLocation.position, spawnLocation.rotation);
+                Turret instance = Singleton.Get<PoolingManager>().GetInstance(spawnEnemy, spawnLocation.position, spawnLocation.rotation);
+                instance.IsSecondaryColor = (Random.value > 0.5f);
             }
             Destroy();
         }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 namespace LudumDare47
 {
@@ -17,7 +18,7 @@ namespace LudumDare47
         [SerializeField]
         BeatKeeper.Interval interval;
         [SerializeField]
-        Turret spawnEnemyPrefab;
+        Turret[] spawnEnemyPrefabs;
 
         #region GetOrientation
         /// <summary>
@@ -86,7 +87,9 @@ namespace LudumDare47
 
         void SpawnEnemy(BeatKeeper source, BeatKeeper.BeatStats stats)
         {
-            EnemySpawner.Spawn(spawnerPrefab, spawnEnemyPrefab, GetRandomSpawnLocation());
+            int randomIndex = Random.Range(0, spawnEnemyPrefabs.Length);
+            Turret spawnPrefab = spawnEnemyPrefabs[randomIndex];
+            EnemySpawner.Spawn(spawnerPrefab, spawnPrefab, GetRandomSpawnLocation());
         }
     }
 }

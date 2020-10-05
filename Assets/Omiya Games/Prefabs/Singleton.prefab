@@ -968,8 +968,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectsToPreload:
+  - {fileID: 3090184137852945847, guid: 39a2f0e06a8800f4ab8bf59f55166bc5, type: 3}
+  - {fileID: 5711403020370787440, guid: 6da158454ad4f2245a2ca9e2258f085f, type: 3}
+  - {fileID: 4032895080233864104, guid: 3ca39b7a012fc47439e28fbda1cefc7c, type: 3}
+  - {fileID: 5046679063910522602, guid: 7f212eb95d1ccb943b920bc2bf130f3a, type: 3}
   - {fileID: 4032895080233864104, guid: ecb3ffefeadd1ac44ac34e92d8c562cf, type: 3}
-  - {fileID: 3090184137852945847, guid: 6da158454ad4f2245a2ca9e2258f085f, type: 3}
+  - {fileID: 6215948841828407315, guid: 9e632be1bd347fc44a06950323b704e2, type: 3}
 --- !u!1 &185162
 GameObject:
   m_ObjectHideFlags: 0

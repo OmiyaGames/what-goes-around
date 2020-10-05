@@ -17,7 +17,10 @@ namespace LudumDare47
 
         [Header("Laser")]
         [SerializeField]
-        LaserStraight laser;
+        [UnityEngine.Serialization.FormerlySerializedAs("laser")]
+        LaserStraight primaryColorLaser;
+        [SerializeField]
+        LaserStraight secondaryColorLaser;
         [SerializeField]
         Transform[] spawnPositions;
 
@@ -37,6 +40,12 @@ namespace LudumDare47
             get => aimAt;
             set => aimAt = value;
         }
+
+        public bool IsSecondaryColor
+        {
+            get;
+            set;
+        } = Game.DefaultIsSecondaryColor;
 
         public static Vector3 GetPointOnPlane(Transform from, Transform target, Vector3 down, ref Plane rotatePlane)
         {
@@ -151,7 +160,15 @@ namespace LudumDare47
 
         private void SpawnLaser(Transform spawnPosition)
         {
-            LaserStraight bullet = Singleton.Get<PoolingManager>().GetInstance(laser, spawnPosition.position, spawnPosition.rotation);
+            // Determine what to spawn
+            LaserStraight spawnPrefab = primaryColorLaser;
+            if(IsSecondaryColor)
+            {
+                spawnPrefab = secondaryColorLaser;
+            }
+
+            // Spawn bullet
+            LaserStraight bullet = Singleton.Get<PoolingManager>().GetInstance(spawnPrefab, spawnPosition.position, spawnPosition.rotation);
             if (inheritMomentum != null)
             {
                 // Add the momentum from a rigidbody

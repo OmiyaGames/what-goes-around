@@ -38,11 +38,13 @@ namespace LudumDare47
         float turnSmooth = 10f;
         [SerializeField]
         Animator animator;
+        [SerializeField]
+        Gun[] allGuns;
 
         Vector2 rawInput, finalInput;
         float invincibleFor = -1f;
         int health = 1;
-        bool color = false;
+        bool color = Game.DefaultIsSecondaryColor;
 
         public bool IsAlive => Health > 0;
 
@@ -52,7 +54,7 @@ namespace LudumDare47
             private set => health = Mathf.Clamp(value, 0, maxHealth);
         }
 
-        public bool IsShipColorPrimary
+        public bool IsSecondaryColor
         {
             get => color;
             private set
@@ -60,6 +62,10 @@ namespace LudumDare47
                 if (color != value)
                 {
                     color = value;
+                    foreach(var gun in allGuns)
+                    {
+                        gun.IsSecondaryColor = value;
+                    }
                 }
             }
         }
@@ -95,7 +101,7 @@ namespace LudumDare47
 
         public bool OnHit(int power, bool color)
         {
-            if (IsShipColorPrimary == color)
+            if (IsSecondaryColor == color)
             {
                 // Eventually add power-up mechanic here
             }
@@ -105,7 +111,7 @@ namespace LudumDare47
                 Health -= 1;
 
                 // Run Screen Effects
-                if (IsShipColorPrimary)
+                if (IsSecondaryColor)
                 {
                     Singleton.Get<CameraManager>().Effects.FlashOnce(flashSecondaryColor);
                 }
@@ -137,12 +143,12 @@ namespace LudumDare47
             // Check if we need to toggle color
             if (Input.GetButtonDown("Jump") == true)
             {
-                IsShipColorPrimary = !IsShipColorPrimary;
+                IsSecondaryColor = !IsSecondaryColor;
             }
 
             // Update animator
             animator.SetBool(InvincibleField, IsInvincible);
-            animator.SetBool(ColorField, IsShipColorPrimary);
+            animator.SetBool(ColorField, IsSecondaryColor);
 
             // Look into other ways to smooth from last input to new one
             finalInput = Vector2.Lerp(finalInput, rawInput, (Time.deltaTime * inputSmooth));

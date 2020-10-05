@@ -19,7 +19,7 @@ namespace LudumDare47
             get;
         }
 
-        bool Color
+        bool IsSecondaryColor
         {
             get;
         }

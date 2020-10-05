@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Turret
-  m_Shader: {fileID: -6465566751694194690, guid: 265d5b2ec1d91e9448af9faffc9115f9,
+  m_Name: Turret Aiming
+  m_Shader: {fileID: -6465566751694194690, guid: 169da3d79158a4c4fb8021e971559f8c,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -50,6 +50,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_405576F7: 5
+    - Vector1_5095FA46: 10
+    - Vector1_CDF14038: 0
     - Vector1_F93D0C6D: 1
     - _AlphaClip: 0
     - _Blend: 0
@@ -72,7 +74,11 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
+    - colorSlider: 0
     m_Colors:
+    - Color_1C83847C: {r: 0.8352941, g: 0.5744274, b: 0.3683647, a: 1}
+    - Color_5D89794E: {r: 0.21698111, g: 0.21698111, b: 0.21698111, a: 1}
+    - Color_815FE794: {r: 0.41672942, g: 0.59689415, b: 0.69803923, a: 1}
     - Color_87CCE80B: {r: 0.8352941, g: 0.36862746, b: 0, a: 1}
     - Color_9EA8D38C: {r: 0.3372549, g: 0.7058824, b: 0.9137255, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
