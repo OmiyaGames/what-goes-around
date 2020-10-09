@@ -3,7 +3,7 @@
     "com.omiyagames.builds": "0.1.1-preview.1",
     "com.omiyagames.common": "0.2.0-preview.1",
     "com.omiyagames.cryptography": "0.3.0-preview.2",
-    "com.omiyagames.embedwebgltemplate": "1.1.0",
+    "com.omiyagames.embedwebgltemplate": "2.0.0",
     "com.omiyagames.global": "0.1.2-preview.1",
     "com.omiyagames.web": "0.3.0-preview.2",
     "com.omiyagames.web.security": "0.2.0-preview.2",
