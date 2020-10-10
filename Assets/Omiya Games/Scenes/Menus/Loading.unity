@@ -43,7 +43,7 @@ RenderSettings:
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 11
+  serializedVersion: 12
   m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
@@ -98,7 +98,8 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 7751bbec1ebe57848b6bff20eb351aab,
+    type: 2}
 --- !u!196 &5
 NavMeshSettings:
   serializedVersion: 2
@@ -118,6 +119,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
@@ -481,6 +484,12 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5555618557856046672, guid: a165fa1c7b4d81d46a7cd866770acf8e,
+        type: 3}
+      propertyPath: m_Name
+      value: TMP SubMeshUI [NotoSansDisplay-Regular SDF Material + NotoSansDisplay-AsciiExtend-Bold
+        Atlas]
+      objectReference: {fileID: 0}
     - target: {fileID: 5718697063632038126, guid: a165fa1c7b4d81d46a7cd866770acf8e,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -511,6 +520,12 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6184958504444764323, guid: a165fa1c7b4d81d46a7cd866770acf8e,
+        type: 3}
+      propertyPath: domainVerifier
+      value: 
+      objectReference: {fileID: 11400000, guid: 61bf6603ef415814892e33f6f1f1fbb1,
+        type: 2}
     - target: {fileID: 6184958504726416102, guid: a165fa1c7b4d81d46a7cd866770acf8e,
         type: 3}
       propertyPath: m_IsActive
@@ -610,6 +625,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7820490769061521959, guid: a165fa1c7b4d81d46a7cd866770acf8e,
+        type: 3}
+      propertyPath: m_Name
+      value: TMP SubMeshUI [NotoSansDisplay-Regular SDF Material + NotoSansDisplay-AsciiExtend-Bold
+        Atlas]
       objectReference: {fileID: 0}
     - target: {fileID: 7991436966504339539, guid: a165fa1c7b4d81d46a7cd866770acf8e,
         type: 3}

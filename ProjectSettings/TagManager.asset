@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Laser
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -14,12 +16,12 @@ TagManager:
   - 
   - 
   - Post-Processing
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player Collision
+  - Enemy Collision
+  - Player Bullet
+  - Enemy Bullet
+  - Player Hitbox
+  - Enemy Hitbox
   - 
   - 
   - 

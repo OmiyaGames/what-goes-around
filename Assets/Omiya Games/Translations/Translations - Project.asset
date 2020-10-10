@@ -37,12 +37,6 @@ MonoBehaviour:
         Taro Omiya
 
 
-        <b>2D Textures</b>
-
-        Taro
-        Omiya
-
-
         <b>Music</b>
 
         Taro Omiya
@@ -65,7 +59,7 @@ MonoBehaviour:
 
         All particles effects
 
-        by Taro Omiya
+        by Unity
 
 
         <b>Special
@@ -73,11 +67,11 @@ MonoBehaviour:
 
         Tech Valley Game Space
 
-        Tech Valley Center of
-        Gravity
+        Ludum Dare 47
 
 
-        <b>Support us on Ko-fi!</b>
+        <b>Support
+        us on Ko-fi!</b>
 
         Donate at: <link="kofi"><u>ko-fi.com/omiyagames</u></link>
 
@@ -95,119 +89,49 @@ MonoBehaviour:
   - key: Game Title
     allTranslations:
     - languageIndex: 0
-      text: Template Unity Project
-    - languageIndex: 1
-      text: "\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8\u4E00\u25CF\u30E6\u30CB\u30C6\u30A3\u30FC\u25CF\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8"
-    - languageIndex: 2
-      text: Ethay Ecursiveray Ollhouseday
+      text: What Goes Around
+  - key: Health
+    allTranslations:
+    - languageIndex: 0
+      text: 'Health:'
   - key: Instructions
     allTranslations:
     - languageIndex: 0
-      text: 'The game''s objective is to travel as far as possible without falling
-        off of the course. Please note that this game is still in development stages.
+      text: 'Destroy all things.
 
 
         <b>Controls:</b>
 
 
-        *
-        Left or right arrow keys to steer.
+        * Arrow Keys
+        or WASD to move.
 
 
-        * Hold the down arrow key to
-        slow down.
-
-
-        * Hold the up arrow key to use turbo (requires fuel).
+        * Move mouse cursor to aim (gun auto-fires).
 
 
         *
-        Tap the space bar while on the ground to hop.
-
-
-        * Hold the space
-        bar while in the air to dive.
-
-
-        * While on the ground, hold the space
-        bar, then hold left or right to initiate a drift. When the white curve emit
-        from the corner of the vehicle, you may let go of the arrow key to continue
-        drifting; arrow keys can now be used to adjust the angle of the drift.
+        Tap the space bar or right-CTRL to toggle ship color.
 
 
         <b>Tips:</b>
 
 
         *
-        If you end up off-track, a timer will appear to indicate how long you have
-        before the game over screen appears.
+        Lasers with the same color as your ship does not hurt you.
 
 
-        * Drifting and flying in the
-        air charges the turbo fuel.
+        * Running
+        into enemies <i>will</i> hurt your ship.
 
 
-        * When off-track, use the turbo fuel
-        and dive to return back to safety!'
+        * Enemies are weak against
+        opposite colored lasers.'
   - key: New High Score Format
     allTranslations:
     - languageIndex: 0
       text: 'Score: {0}'
-  - key: Shader Camera Distance
+  - key: Score
     allTranslations:
     - languageIndex: 0
-      text: Scene Depth
-  - key: Shader Debug Blinn-Phong
-    allTranslations:
-    - languageIndex: 0
-      text: Blinn-Phong
-  - key: Shader Default
-    allTranslations:
-    - languageIndex: 0
-      text: Default Lit
-  - key: Shader Light Attenuation
-    allTranslations:
-    - languageIndex: 0
-      text: Light Attenuation
-  - key: Shader Lit 2-Colors
-    allTranslations:
-    - languageIndex: 0
-      text: Lit 2-Colors
-  - key: Shader Lit 2-Textures
-    allTranslations:
-    - languageIndex: 0
-      text: Lit 2-Textures
-  - key: Shader Lit 3-Colors
-    allTranslations:
-    - languageIndex: 0
-      text: Lit 3-Colors
-  - key: Shader Lit Blinn-Phong
-    allTranslations:
-    - languageIndex: 0
-      text: Lit Blinn-Phong
-  - key: Shader Lit Toon Ambience
-    allTranslations:
-    - languageIndex: 0
-      text: Lit Toon Ambience
-  - key: Shader Lit Toon Faded
-    allTranslations:
-    - languageIndex: 0
-      text: Lit Toon Faded Ramp
-  - key: Shader Lit Toon Ramp
-    allTranslations:
-    - languageIndex: 0
-      text: Lit Toon Ramp
-  - key: Shader Toony Blinn-Phong
-    allTranslations:
-    - languageIndex: 0
-      text: Toony Blinn-Phong
-  - key: Shaders Camera
-    allTranslations:
-    - languageIndex: 0
-      text: 'Click-and-hold the center of the
-
-        screen to rotate the camera.'
-  - key: Shaders List
-    allTranslations:
-    - languageIndex: 0
-      text: Preview Shader
+      text: 'Score:'
