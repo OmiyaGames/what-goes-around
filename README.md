@@ -6,13 +6,19 @@ A 3D shm'up combining *Ikaruga* with *Geometry Wars 3*. Absorb like-colored lase
 
 Created for [Ludum Dare 47](https://ldjam.com/events/ludum-dare/47/what-goes-around).
 
-**Controls:**
+## Controls:
 
 * Arrow keys or WASD to move.
 * Mouse to aim (the laser auto-fires).
 * Tap the Space bar or right-Ctrl to toggle your ship color.
 
 Like *Ikaruga*, your ship can absorb like-colored lasers, while enemies are weak against opposite colored lasers. Note that running into other ships, regardless of color, will still  hurt your ship.
+
+## Logs:
+
+| Version | For Judging? | Date | Description |
+|--- |--- |--- |--- |
+| v0.1 | Yes | 10/5 | Initial upload. |
 
 ## More Info
 
